@@ -1,0 +1,19 @@
+{
+  "name": "fluenz-intensive-training",
+  "description": "Registration and Contact site for Fluenz Intensive training",
+  "version": "1.0.0",
+  "author": {
+    "name": "Gabriel Reyes"
+  },
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "express": "^4.13.4",
+    "morgan": "^1.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.9.1"
+  }
+}
