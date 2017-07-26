@@ -28,4 +28,26 @@ router.get('/create', function(req, res, next) {
     res.send('response!');
 });
 
+router.post('/spreadsheets/reservations', function(req, res, next) {
+
+    console.log('Hello! Youve called /spreadsheets/reservations');
+
+    //TODO: get request payload
+    var helper = new SheetsHelper();
+    var spreadsheet = {
+        id: "testSpreadsheet",
+        sheetId: "someId"
+    };
+    var reservation = {
+        "hello": "it is I"
+    };
+
+    helper.updateSpreadsheet(spreadsheet.id, spreadsheet.sheetId, reservation, function(err) {
+        if (err) {
+            return next(err);
+        }
+        return res.json({"message":"herro!"});
+    });
+});
+
 module.exports = router;

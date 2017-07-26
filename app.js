@@ -52,11 +52,8 @@ app.use(function(err, req, res, next) {
         message: err.message,
         error: err
     };
-    if (req.xhr) {
-        res.json(data);
-    } else {
-        res.render('error', data);
-    }
+
+    res.json({"bad things":"happened"});
 });
 
 module.exports = app;

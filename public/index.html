@@ -94,17 +94,30 @@
 </div><!-- /.carousel -->
 
 <!-- Carousel ================================================== -->
-<div id="app">
-    <h3>This is where the buttons for the form will go</h3>
+<div id="app" ng-app="fluenzIntensiveTraining">
+    <div id="test" ng-controller="TestController">
+        <div id="content" style="margin: 2%">
+            <h3>
+                {{message}}
+            </h3>
+            <div class="container">
+                <input type="button" class="btn btn-default" value="Call!" ng-click="callBackend()">
+            </div>
+        </div>
+    </div>
 </div>
 
 
-<!-- Bootstrap core JavaScript ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
+<!-- Vendor libraries ================================================== -->
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="node_modules/angular/angular.min.js"></script>
+<script src="node_modules/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+
+<!-- Custom libraries -->
+<script src="app.js"></script>
 <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
 <script src="assets/libs/holder.min.js"></script>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+
 </body>
 </html>

@@ -16,3 +16,23 @@ myApp.config(function($stateProvider) {
     $stateProvider.state(helloState);
     $stateProvider.state(aboutState);
 });
+
+//region Controllers
+myApp.controller('TestController', ['$scope', '$http', function($scope, $http){
+    $scope.message = 'it is I!';
+
+    $scope.callBackend = function(){
+
+
+        $http({
+            method: 'POST',
+            url: '/spreadsheets/reservations',
+            data:{test: "I am a test"}
+        }).then(function successCallback(result){
+            console.info('Success! %O', result);
+        }, function errorCallback(error){
+            console.error('Dead! %O', error);
+        });
+    };
+}]);
+//endregion
