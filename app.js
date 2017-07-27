@@ -54,4 +54,10 @@ app.use(function(err, req, res, next) {
     res.json(data);
 });
 
+//TODO: 1) Try with client-side OAuth with implementation from tutorial
+
+//TODO: 2) Authentication handling nodeJS (expiration, session closing on crash, etc).
+
+//TODO: 3) Google service account login
+
 module.exports = app;
