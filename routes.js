@@ -20,33 +20,35 @@
 'use strict';
 
 var express = require('express');
+var SheetsHelper = require('./sheets');
 var router = express.Router();
 
 
-router.get('/create', function(req, res, next) {
+router.get('/create', function (req, res, next) {
     console.log('/Create called!');
     res.send('response!');
 });
 
-router.post('/spreadsheets/reservations', function(req, res, next) {
+router.post('/spreadsheets/reservations', function (req, res, next) {
 
     console.log('Hello! Youve called /spreadsheets/reservations');
 
-    //TODO: get request payload
-    var helper = new SheetsHelper();
-    var spreadsheet = {
-        id: "testSpreadsheet",
-        sheetId: "someId"
-    };
-    var reservation = {
-        "hello": "it is I"
-    };
+    //Open a buffer to read the request body.
+    var reservation = [];
+    req.on('data', function (chunk) {
+        reservation .push(chunk);
+    }).on('end', function () {
+        reservation = JSON.parse(Buffer.concat(reservation).toString());
 
-    helper.updateSpreadsheet(spreadsheet.id, spreadsheet.sheetId, reservation, function(err) {
-        if (err) {
-            return next(err);
-        }
-        return res.json({"message":"herro!"});
+        //Build request to SheetsHelper
+        var helper = new SheetsHelper();
+
+        console.log('Gonna updateSpreadsheet');
+        helper.updateSpreadsheet(reservation, function(err) {
+            if (err) {
+                return next(err);
+            }
+        });
     });
 });
 
