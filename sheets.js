@@ -2,7 +2,7 @@ var google = require('googleapis');
 var util = require('util');
 
 //region Constants
-var key = require('../My Project-920c63f73f63.json');
+var key = require('My Project-920c63f73f63.json');
 var jwtClient = new google.auth.JWT(
     key.client_email,
     null,
