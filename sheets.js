@@ -1,6 +1,19 @@
 var google = require('googleapis');
-var googleAuth = require('google-auth-library');
 var util = require('util');
+
+//region Constants
+var key = require('../My Project-920c63f73f63.json');
+var jwtClient = new google.auth.JWT(
+    key.client_email,
+    null,
+    key.private_key,
+    ['https://www.googleapis.com/auth/spreadsheets'],
+    null
+);
+
+var SPREADSHEET_ID = '1C6hHM8POcOV5-W84z38aFCmIFStis6TY7uEPMd-LcEU';
+var SHEET_ID = '1086357442';
+//endregion
 
 //region Models
 var COLUMNS = [
@@ -101,16 +114,24 @@ function buildRowFromReservation(reservation) {
 
 //endregion
 
-var API_KEY = 'AIzaSyBXAUZjwkkrm6OCa-C-YE-yv9Gk7Kte6Cs';
-var SPREADSHEET_ID = '1C6hHM8POcOV5-W84z38aFCmIFStis6TY7uEPMd-LcEU';
-var SHEET_ID = '1086357442';
-
 //region SheetHelper Definition and export
-var SheetsHelper = function () {
-    this.service = google.sheets({version: 'v4', auth: API_KEY});
+var SheetsHelper = function (callback) {
+    var $this = this;
+
+    jwtClient.authorize(function(err, tokens){
+        if(err){
+            console.log('Error!', err);
+            return;
+        }
+
+        console.log('Authenticated!');
+        $this.service = google.sheets({version: 'v4', auth: jwtClient});
+        callback();
+    });
+
 };
 
-SheetsHelper.prototype.updateSpreadsheet = function (reservation, callback) {
+var prepareUpdateRequests = function(rowCount, reservation){
     var requests = [];
     // Resize the sheet.
     requests.push({
@@ -118,38 +139,84 @@ SheetsHelper.prototype.updateSpreadsheet = function (reservation, callback) {
             properties: {
                 sheetId: SHEET_ID,
                 gridProperties: {
-                    rowCount: 2, //TODO: do GET to have rowCount
+                    rowCount: rowCount + 1,
                     columnCount: COLUMNS.length
                 }
             },
             fields: 'gridProperties(rowCount,columnCount)'
         }
-    });
+    }); //updateSheetProperties
+    requests.push({
+        autoResizeDimensions: {
+            dimensions: {
+                sheetId: SHEET_ID,
+                dimension: "COLUMNS",
+                startIndex: 0,
+                endIndex: COLUMNS.length
+            }
+        }
+    }); //autoResizeDimensions
+
     // Set the cell values.
     requests.push({
         updateCells: {
             start: {
                 sheetId: SHEET_ID,
-                rowIndex: 1,
+                rowIndex: rowCount,
                 columnIndex: 0
             },
             rows: buildRowFromReservation(reservation),
             fields: '*'
         }
-    });
+    }); //updateCells
+
     // Send the batchUpdate request.
-    var request = {
+    return {
         spreadsheetId: SPREADSHEET_ID,
         resource: {
             requests: requests
         }
     };
-    this.service.spreadsheets.batchUpdate(request, function (err) {
-        console.log('batchUpdate done!!');
-        if (err) {
-            return callback(err);
+};
+
+SheetsHelper.prototype.getSpreadsheet = function(callback){
+    var params = {
+        spreadsheetId: SPREADSHEET_ID,
+        ranges: [],
+        includeGridData: false
+    };
+
+    this.service.spreadsheets.get(params, function(err, response){
+        if(err){
+            console.log('this.service.spreadsheets.get error:', err);
+            return
         }
-        return callback();
+
+        callback(response);
+    });
+};
+
+SheetsHelper.prototype.updateSpreadsheet = function (reservation, callback) {
+
+    var batchUpdate = this.service.spreadsheets.batchUpdate;
+
+    this.getSpreadsheet(function(result){
+        var rowCount = result.sheets[0].properties.gridProperties.rowCount;
+
+        var request = prepareUpdateRequests(rowCount, reservation);
+        console.log('Request: %o', request);
+
+        batchUpdate(request, function (err, response) {
+            if (err) {
+                console.log("ERROR in batchUpdate", err);
+                return callback(err);
+            }
+            if(response){
+                console.log('Got a response', response);
+            }
+
+           callback();
+        });
     });
 };
 
