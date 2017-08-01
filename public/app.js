@@ -19,39 +19,67 @@ myApp.config(function ($stateProvider) {
 
 //region Controllers
 myApp.controller('TestController', ['$scope', '$http', function ($scope, $http) {
-    $scope.message = 'it is I!';
+    $scope.selections = [
+        {name:'single', label:'SINGLE'},
+        {name:'double', label:'DOUBLE'},
+    ];
 
-    $scope.callBackend = function () {
+    $scope.occupancy = $scope.selections[0];
+    $scope.reservationDate = 'Sept 10-16';
+    $scope.location = 'MEXICO CITY';
+
+
+    $scope.placeReservation = function () {
+        console.log('Calling node with a new reservation');
         $http({
             method: 'POST',
             url: '/spreadsheets/reservations',
             data: {
-                timestamp: 'Timestamp' + Date.now(),
-                reservationDates: 'Reservation Dates' + Date.now(),
-                location: 'Location' + Date.now(),
-                occupancy: 'Occupancy' + Date.now(),
-                firstName: 'First Name' + Date.now(),
-                lastName: 'Last Name' + Date.now(),
-                email: 'E-mail' + Date.now(),
-                message: 'Message' + Date.now(),
-                status: 'Status' + Date.now()
+                timestamp: new Date(),
+                reservationDates: $scope.reservationDate,
+                location: $scope.location,
+                occupancy: $scope.occupancy.name,
+                firstName: $scope.firstName,
+                lastName: $scope.lastName,
+                reservationEmail: $scope.reservationEmail,
+                message: $scope.message,
+                status: 'Pending'
             }
         }).then(function successCallback(result) {
-            $scope.result = result.data;
+            console.log('Success placing a reservation:', result.data);
         }, function errorCallback(error) {
-            $scope.result = error;
+            console.error('Error when reserving: ', error);
         });
     };
 
-    $scope.getSpreadsheet = function() {
+    $scope.requestBrochure = function(){
+        console.log('Calling node with a brochure request');
         $http({
-            method: 'GET',
-            url: '/spreadsheets/reservations'
+            method: 'POST',
+            url: '/spreadsheets/brochure',
+            data: {
+                timestamp: new Date(),
+                brochureEmail: $scope.brochureEmail,
+                status: 'Pending'
+            }
         }).then(function successCallback(result) {
-            $scope.result = result;
+            console.log('Success requesting a brochure:', result.data);
         }, function errorCallback(error) {
-            $scope.result = error;
+            console.error('Error when requesting a brochure: ', error);
         });
     };
+
+//region DEBUG
+//     $scope.getSpreadsheet = function() {
+//         $http({
+//             method: 'GET',
+//             url: '/spreadsheets/reservations'
+//         }).then(function successCallback(result) {
+//             console.log('Success in $scope.getSpreadsheet(): %o', result);
+//         }, function errorCallback(error) {
+//             console.error('There was a problem in $scope.getSpreadsheet(): %o', error);
+//         });
+//     };
+//endregion
 }]);
 //endregion

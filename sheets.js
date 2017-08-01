@@ -36,30 +36,39 @@ var jwtClient = new google.auth.JWT(
 //endregion
 
 var SPREADSHEET_ID = '1C6hHM8POcOV5-W84z38aFCmIFStis6TY7uEPMd-LcEU';
-var SHEET_ID = '1086357442';
+var RESERVATION_SHEET_ID = '1086357442';
+var BROCHURE_SHEET_ID = '1962825593';
 
 //endregion
 
 //endregion
 
 //region Models
-var COLUMNS = [
+var RESERVATION_COLUMNS = [
     {field: 'timestamp', header: 'Timestamp'},
     {field: 'reservationDates', header: 'Reservation Dates'},
     {field: 'location', header: 'Location'},
     {field: 'occupancy', header: 'Occupancy'},
     {field: 'firstName', header: 'First Name'},
     {field: 'lastName', header: 'Last Name'},
-    {field: 'email', header: 'E-mail'},
+    {field: 'reservationEmail', header: 'E-mail'},
     {field: 'message', header: 'Message'},
     {field: 'status', header: 'Status'}
+];
+
+var BROCHURE_COLUMNS = [
+    {field: 'timestamp', header: 'Timestamp'},
+    {field: 'brochureEmail', header: 'Email'},
+    {field: 'med', header: 'Med'},
+    {field: 'cam', header: 'Cam'},
+    {field: 'status', header: 'First Status'}
 ];
 //endregion
 
 //region Private sheets.js functions
 function buildRowFromReservation(reservation) {
 
-    var cells = COLUMNS.map(function (column) {
+    var cells = RESERVATION_COLUMNS.map(function (column) {
         switch (column.field) {
             case 'timeStamp':
                 return {
@@ -103,17 +112,17 @@ function buildRowFromReservation(reservation) {
                     }
                 };
                 break;
-            case 'email':
+            case 'reservationEmail':
                 return {
                     userEnteredValue: {
-                        stringValue: reservation.email
+                        stringValue: reservation.reservationEmail
                     }
                 };
                 break;
             case 'message':
                 return {
                     userEnteredValue: {
-                        stringValue: reservation.email
+                        stringValue: reservation.message
                     }
                 };
                 break;
@@ -139,6 +148,57 @@ function buildRowFromReservation(reservation) {
 
 }
 
+function buildRowFromBrochureRequest(request){
+    var cells = BROCHURE_COLUMNS.map(function (column) {
+        switch (column.field) {
+            case 'timeStamp':
+                return {
+                    userEnteredValue: {
+                        stringValue: request.timestamp
+                    }
+                };
+                break;
+            case 'brochureEmail':
+                return {
+                    userEnteredValue: {
+                        stringValue: request.brochureEmail
+                    }
+                };
+                break;
+            case 'med':
+                return {
+                    userEnteredValue: {
+                        stringValue: ''
+                    }
+                };
+                break;
+            case 'cam':
+                return {
+                    userEnteredValue: {
+                        stringValue: ''
+                    }
+                };
+                break;
+            case 'status':
+                return {
+                    userEnteredValue: {
+                        stringValue: request.status
+                    }
+                };
+                break;
+
+            default:
+                return {
+                    userEnteredValue: {
+                        stringValue: request[column.field].toString()
+                    }
+                };
+        }
+    });
+    return {
+        values: cells
+    };
+}
 //endregion
 
 //region SheetHelper Definition and export
@@ -158,16 +218,16 @@ var SheetsHelper = function (callback) {
 
 };
 
-var prepareUpdateRequests = function(rowCount, reservation){
+var prepareUpdateRequestsForReservation = function(rowCount, reservation){
     var requests = [];
     // Resize the sheet.
     requests.push({
         updateSheetProperties: {
             properties: {
-                sheetId: SHEET_ID,
+                sheetId: RESERVATION_SHEET_ID,
                 gridProperties: {
                     rowCount: rowCount + 1,
-                    columnCount: COLUMNS.length
+                    columnCount: RESERVATION_COLUMNS.length
                 }
             },
             fields: 'gridProperties(rowCount,columnCount)'
@@ -176,10 +236,10 @@ var prepareUpdateRequests = function(rowCount, reservation){
     requests.push({
         autoResizeDimensions: {
             dimensions: {
-                sheetId: SHEET_ID,
+                sheetId: RESERVATION_SHEET_ID,
                 dimension: "COLUMNS",
                 startIndex: 0,
-                endIndex: COLUMNS.length
+                endIndex: RESERVATION_COLUMNS.length
             }
         }
     }); //autoResizeDimensions
@@ -188,7 +248,7 @@ var prepareUpdateRequests = function(rowCount, reservation){
     requests.push({
         updateCells: {
             start: {
-                sheetId: SHEET_ID,
+                sheetId: RESERVATION_SHEET_ID,
                 rowIndex: rowCount,
                 columnIndex: 0
             },
@@ -205,7 +265,103 @@ var prepareUpdateRequests = function(rowCount, reservation){
         }
     };
 };
+var prepareUpdateRequestsForBrochureRequest= function(rowCount, request){
+    var requests = [];
+    // Resize the sheet.
+    requests.push({
+        updateSheetProperties: {
+            properties: {
+                sheetId: BROCHURE_SHEET_ID,
+                gridProperties: {
+                    rowCount: rowCount + 1,
+                    columnCount: BROCHURE_COLUMNS.length
+                }
+            },
+            fields: 'gridProperties(rowCount,columnCount)'
+        }
+    }); //updateSheetProperties
+    requests.push({
+        autoResizeDimensions: {
+            dimensions: {
+                sheetId: BROCHURE_SHEET_ID,
+                dimension: "COLUMNS",
+                startIndex: 0,
+                endIndex: BROCHURE_COLUMNS.length
+            }
+        }
+    }); //autoResizeDimensions
 
+    // Set the cell values.
+    requests.push({
+        updateCells: {
+            start: {
+                sheetId: BROCHURE_SHEET_ID,
+                rowIndex: rowCount,
+                columnIndex: 0
+            },
+            rows: buildRowFromBrochureRequest(request),
+            fields: '*'
+        }
+    }); //updateCells
+
+    // Send the batchUpdate request.
+    return {
+        spreadsheetId: SPREADSHEET_ID,
+        resource: {
+            requests: requests
+        }
+    };
+};
+
+SheetsHelper.prototype.makeReservation = function (reservation, callback) {
+
+    var batchUpdate = this.service.spreadsheets.batchUpdate;
+
+    this.getSpreadsheet(function(result){
+        var rowCount = result.sheets[0].properties.gridProperties.rowCount;
+
+        var request = prepareUpdateRequestsForReservation(rowCount, reservation);
+        console.log('Request: %o', request);
+
+        batchUpdate(request, function (err, response) {
+            if (err) {
+                console.log("ERROR in batchUpdate", err);
+                return callback(err);
+            }
+            if(response){
+                console.log('Got a response', response);
+            }
+
+           callback();
+        });
+    });
+};
+
+SheetsHelper.prototype.requestBrochure = function (request, callback) {
+
+    var batchUpdate = this.service.spreadsheets.batchUpdate;
+
+    this.getSpreadsheet(function(result){
+        var rowCount = result.sheets[1].properties.gridProperties.rowCount;
+
+        var requests = prepareUpdateRequestsForBrochureRequest(rowCount, request);
+        console.log('Request: %o', requests);
+
+        batchUpdate(requests, function (err, response) {
+            if (err) {
+                console.log("ERROR in batchUpdate", err);
+                return callback(err);
+            }
+            if(response){
+                console.log('Got a response', response);
+            }
+
+            callback();
+        });
+    });
+};
+
+//region internal
 SheetsHelper.prototype.getSpreadsheet = function(callback){
     var params = {
         spreadsheetId: SPREADSHEET_ID,
@@ -222,30 +378,7 @@ SheetsHelper.prototype.getSpreadsheet = function(callback){
         callback(response);
     });
 };
-
-SheetsHelper.prototype.updateSpreadsheet = function (reservation, callback) {
-
-    var batchUpdate = this.service.spreadsheets.batchUpdate;
-
-    this.getSpreadsheet(function(result){
-        var rowCount = result.sheets[0].properties.gridProperties.rowCount;
-
-        var request = prepareUpdateRequests(rowCount, reservation);
-        console.log('Request: %o', request);
-
-        batchUpdate(request, function (err, response) {
-            if (err) {
-                console.log("ERROR in batchUpdate", err);
-                return callback(err);
-            }
-            if(response){
-                console.log('Got a response', response);
-            }
-
-           callback();
-        });
-    });
-};
+//endregion
 
 module.exports = SheetsHelper;
 //endregion

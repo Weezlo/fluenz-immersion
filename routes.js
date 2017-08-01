@@ -28,24 +28,7 @@ var helper = new SheetsHelper(function(){
     console.log('SheetsHelper initialized');
 });
 
-router.get('/spreadsheets/reservations', function (req, res, next) {
-
-    if(!helper){
-        res.status(500).send({error: "Sheets helper not defined. Cannot retrieve sheet"});
-        return;
-    }
-
-    helper.getSpreadsheet(function(result){
-        console.log('Success getting spreadsheet!', result);
-        res.send(result);
-    }, function(error){
-        console.log('Error getting spreadsheet', error);
-    });
-});
-
-
 router.post('/spreadsheets/reservations', function (req, res, next) {
-
     if(!helper){
         res.status(500).send({error: "Sheets helper not defined. Will not update"});
         return;
@@ -58,8 +41,8 @@ router.post('/spreadsheets/reservations', function (req, res, next) {
     }).on('end', function () {
         reservation = JSON.parse(Buffer.concat(reservation).toString());
 
-        console.log('Gonna updateSpreadsheet');
-        helper.updateSpreadsheet(reservation, function(err) {
+        console.log('Gonna makeReservation');
+        helper.makeReservation(reservation, function(err) {
             if (err) {
                 return next(err);
             } else {
@@ -68,5 +51,46 @@ router.post('/spreadsheets/reservations', function (req, res, next) {
         });
     });
 });
+
+router.post('/spreadsheets/brochure', function(req, res, next){
+    if(!helper){
+        res.status(500).send({error: "Sheets helper not defined. Will not update"});
+        return;
+    }
+
+    //Open a buffer to read the request body.
+    var brochureRequest = [];
+    req.on('data', function (chunk) {
+        brochureRequest .push(chunk);
+    }).on('end', function () {
+        brochureRequest = JSON.parse(Buffer.concat(brochureRequest).toString());
+
+        console.log('Gonna requestBrochure');
+        helper.requestBrochure(brochureRequest, function(err) {
+            if (err) {
+                return next(err);
+            } else {
+                res.send({"message":"successful update"});
+            }
+        });
+    });
+});
+
+//region DEBUG
+// router.get('/spreadsheets/reservations', function (req, res, next) {
+//
+//     if(!helper){
+//         res.status(500).send({error: "Sheets helper not defined. Cannot retrieve sheet"});
+//         return;
+//     }
+//
+//     helper.getSpreadsheet(function(result){
+//         console.log('Success getting spreadsheet!', result);
+//         res.send(result);
+//     }, function(error){
+//         console.log('Error getting spreadsheet', error);
+//     });
+// });
+//endregion
 
 module.exports = router;
