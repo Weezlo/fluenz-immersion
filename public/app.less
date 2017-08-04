@@ -1,9 +1,154 @@
+body, html {
+  height: 100%;
+}
+
+.container {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+
+}
+
 #app {
-  h5 {
-    font-weight: bold;
+  #content {
+
+    //=======================TODO: REMOVE THIS
+    margin-bottom: 300px;
+
+    .fluenz-title {
+      color: gray;
+      font-size: 61px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    .fluenz-blurb-title {
+      color: red;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .fluenz-sub-title {
+      color: #33b9af;
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    #panel-1 {
+      //border: green solid thick;
+      background: transparent url('assets/temp/img/panel1.PNG') no-repeat center center;
+      width: auto;
+      height: 842px;
+      background-size: cover;
+    }
+
+    #panel-2 {
+      //border: red solid thick;
+      margin-left: 10%;
+      margin-right: 10%;
+
+      .link {
+        //border: black solid thick;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        text-align: center;
+        h5 {
+          display: inline-block;
+        }
+      }
+    }
+
+    #panel-3 {
+
+      .col-md-3 {
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      #column-1 {
+        .mosaic-img {
+          border: solid orange thick;
+        }
+      }
+
+      #column-2 {
+        .mosaic-img {
+          border: solid blue thick;
+        }
+      }
+
+      #column-3 {
+        .mosaic-img {
+          border: solid orange thick;
+        }
+      }
+
+      #column-4 {
+        .mosaic-img {
+          border: solid blue thick;
+        }
+      }
+
+      .mosaic-img {
+        height: 288px;
+        text-align: center;
+        vertical-align: middle;
+      }
+    }
+
+    #panel-4, #panel-9  {
+      margin-left: 12%;
+      margin-right: 12%;
+
+      .col-md-4, .col-md-6 {
+        padding-right: 14px;
+        p {
+          font-size: 21px;
+        }
+      }
+    }
+
+    #panel-5, #panel-7  {
+
+      padding-top: 100px;
+      padding-left: 12%;
+      padding-right: 12%;
+      background-size: cover;
+      background-color: #f8f7f3;
+
+      p {
+        font-size: 21px;
+        margin-bottom: 20px;
+      }
+    }
+
+    #panel-6 {
+      margin-top: 20px;
+      .col-md-3 {
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      .mosaic-img {
+        border: solid orange thick;
+        height: 288px;
+        text-align: center;
+        vertical-align: middle;
+      }
+    }
+
+    #panel-8 {
+      //border: green solid thick;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      background: transparent url('assets/temp/img/sonia.PNG') no-repeat center center;
+      width: auto;
+      height: 469px;
+      background-size: cover;
+    }
   }
 
-  #content {
-    margin-top: 4%;
+  #debug {
+    display: none;
   }
 }

@@ -1,6 +1,121 @@
-#app h5 {
-  font-weight: bold;
+body,
+html {
+  height: 100%;
+}
+.container {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
 }
 #app #content {
-  margin-top: 4%;
+  margin-bottom: 300px;
+}
+#app #content .fluenz-title {
+  color: gray;
+  font-size: 61px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+#app #content .fluenz-blurb-title {
+  color: red;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+#app #content .fluenz-sub-title {
+  color: #33b9af;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+#app #content #panel-1 {
+  background: transparent url('assets/temp/img/panel1.PNG') no-repeat center center;
+  width: auto;
+  height: 842px;
+  background-size: cover;
+}
+#app #content #panel-2 {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+#app #content #panel-2 .link {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  text-align: center;
+}
+#app #content #panel-2 .link h5 {
+  display: inline-block;
+}
+#app #content #panel-3 .col-md-3 {
+  padding-right: 0;
+  padding-left: 0;
+}
+#app #content #panel-3 #column-1 .mosaic-img {
+  border: solid orange thick;
+}
+#app #content #panel-3 #column-2 .mosaic-img {
+  border: solid blue thick;
+}
+#app #content #panel-3 #column-3 .mosaic-img {
+  border: solid orange thick;
+}
+#app #content #panel-3 #column-4 .mosaic-img {
+  border: solid blue thick;
+}
+#app #content #panel-3 .mosaic-img {
+  height: 288px;
+  text-align: center;
+  vertical-align: middle;
+}
+#app #content #panel-4,
+#app #content #panel-9 {
+  margin-left: 12%;
+  margin-right: 12%;
+}
+#app #content #panel-4 .col-md-4,
+#app #content #panel-9 .col-md-4,
+#app #content #panel-4 .col-md-6,
+#app #content #panel-9 .col-md-6 {
+  padding-right: 14px;
+}
+#app #content #panel-4 .col-md-4 p,
+#app #content #panel-9 .col-md-4 p,
+#app #content #panel-4 .col-md-6 p,
+#app #content #panel-9 .col-md-6 p {
+  font-size: 21px;
+}
+#app #content #panel-5,
+#app #content #panel-7 {
+  padding-top: 100px;
+  padding-left: 12%;
+  padding-right: 12%;
+  background-size: cover;
+  background-color: #f8f7f3;
+}
+#app #content #panel-5 p,
+#app #content #panel-7 p {
+  font-size: 21px;
+  margin-bottom: 20px;
+}
+#app #content #panel-6 {
+  margin-top: 20px;
+}
+#app #content #panel-6 .col-md-3 {
+  padding-right: 0;
+  padding-left: 0;
+}
+#app #content #panel-6 .mosaic-img {
+  border: solid orange thick;
+  height: 288px;
+  text-align: center;
+  vertical-align: middle;
+}
+#app #content #panel-8 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background: transparent url('assets/temp/img/sonia.PNG') no-repeat center center;
+  width: auto;
+  height: 469px;
+  background-size: cover;
+}
+#app #debug {
+  display: none;
 }
