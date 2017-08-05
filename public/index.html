@@ -8,12 +8,13 @@
 
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="favicon.ico">
 
     <title>Fluenz Immersion</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/libs/ng-prettyjson/dist/ng-prettyjson.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="app.css" rel="stylesheet">
@@ -195,29 +196,129 @@
             </div><!--Blurbs -->
             <div id="panel-8" class="row"></div><!--Sonia-->
             <div id="panel-9" class="row">
+                <div class="col-md-6">
+                    <div class="fluenz-blurb-title">ASSESSMENT</div>
+                    <p>We begin with an extensive assessment to understand your Spanish, your objectives, and the
+                        ideal path for you.</p>
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="fluenz-blurb-title">ASSESSMENT</div>
-                        <p>We begin with an extensive assessment to understand your Spanish, your objectives, and the
-                            ideal path for you.</p>
+                    <div class="fluenz-blurb-title">THE METHOD</div>
+                    <p>By zeroing in on the specific grammar and syntax that are blocking your fluency we give you a
+                        path to accelerate your verbal expression and retention.</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="fluenz-blurb-title">COACHING</div>
+                    <p>We get you to fluency with the kind of high-impact coaching developed for elite athletes,
+                        sustained over several days, calibrated to achieve your objectives.</p>
 
-                        <div class="fluenz-blurb-title">THE METHOD</div>
-                        <p>By zeroing in on the specific grammar and syntax that are blocking your fluency we give you a
-                            path to accelerate your verbal expression and retention.</p>
+                    <div class="fluenz-blurb-title">BEGINNERS</div>
+                    <p>If you've never studied Spanish before, our unique map through Spanish for English speakers
+                        will get you to fluency in a way that will surprise you.</p>
+                </div>
+            </div> <!--"The method"-->
+
+            <!--TODO: styling for bullet-->
+            <!--TODO: map background with gradient-->
+            <!--TODO: images-->
+            <!--TODO: margins-->
+            <!--TODO: container-->
+            <!--TODO: reservation form-->
+            <div id="panel-10" class="row">
+                <div class="col container">
+                    <div class="row fluenz-title">
+                        <div>
+                            <span>PREMIERE LODGING</span>
+                        </div>
+                        <div>
+                            <span>AND FOOD IN A BEAUTIFUL CITY</span>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="fluenz-blurb-title">COACHING</div>
-                        <p>We get you to fluency with the kind of high-impact coaching developed for elite athletes,
-                            sustained over several days, calibrated to achieve your objectives.</p>
-
-                        <div class="fluenz-blurb-title">BEGINNERS</div>
-                        <p>If you've never studied Spanish before, our unique map through Spanish for English speakers
-                            will get you to fluency in a way that will surprise you.</p>
+                    <div id="bullets" class="row">
+                        <div class="col">
+                            <ul>
+                                <li>A restored colonial house, now a separate wing of a premiere hotel in town, has been
+                                    reserved for the group.
+                                </li>
+                                <li>Each participant stays in their own suite with bathroom and modern amenities -
+                                    unless there is a request for double occupancy.
+                                </li>
+                                <li>The program includes six breakfasts and six lunches made with local ingredients and
+                                    health in mind (vegetarian and vegan meals can be arranged).
+                                </li>
+                                <li>There will be an evening buffet on the first evening and two group dinners at some
+                                    of the town's best restaurants. Participants will have three dinners on their own,
+                                    where they can choose to eat out or stay in.
+                                </li>
+                                <li>We provide all airport pickups and transfers.
+                                </li>
+                            </ul>
+                        </div>
                     </div>
+                    <div id="house-images" class="row">
+                        <div id="house-1" class="col-md-6">
+                            <div class="mosaic-img"></div>
+                            <div class="mosaic-img"></div>
+                        </div>
+                        <div id="house-2" class="col-md-6">
+                            <div class="mosaic-img"></div>
+                            <div class="mosaic-img"></div>
+                        </div>
+                    </div>
+                    <div id="dates-and-activities" class="row">
+                        <div class="col">
+                            <div class="fluenz-blurb-title">DATES AND FEES</div>
+                            <p>The first cohort of the Fluenz Intensive training program is almost entirely sold out.
+                                The second cohort will take place from Sunday, September 17th through Saturday,
+                                September 23rd, 2017. The cost of the program is <strong>$4,880</strong> for single
+                                occupancy participants and <strong>$4,480</strong> each for double occupancy (we have
+                                limited availability of suites with double beds).</p>
+
+                            <div class="fluenz-blurb-title">ADDITIONAL ACTIVITIES</div>
+                            <p>During the week each participant can enjoy an optional hike or mountain bike ride
+                                (scheduled around your sessions) with one of Antigua's premiere outdoor specialists.
+                                There will be a yoga instructor for end of day sessions on Monday, Wednesday, and
+                                Friday, as well as a 50-minute massage for each participant during the week. There will
+                                be a full day access to a gym and a pool at a nearby hotel.</p>
+                        </div>
+                    </div>
+                    <div id="city" class="row"></div>
+                    <div id="reservation-header" class="row">
+                        <div id="header">
+                            MAKE YOUR 2018 RESERVATION NOW
+                        </div>
+                    </div>
+                    <div id="reservation-form" class="row">
+                        <div class="col container">
+                            <form name="parentReservationForm">
+                                <div ng-repeat="option in formOptions track by $index" class="row form-row">
+                                    <ng-form name="reservationForm">
+                                        <div class="col container">
+                                            <div class="row reservation-form-header">
+                                                <div class="col-md-3 week-number">Week {{$index + 1}}</div>
+                                                <div class="col-md-3 reservation-dates">{{option.reservationDate}}</div>
+                                            </div>
+                                            <div class="row inputs">
+                                                <div class="col-md-6 name-email">
+                                                    <input name="name" ng-model="option.name"
+                                                           class="form-control input">
+                                                    <input name="email" ng-model="option.email"
+                                                           class="form-control input">
+                                                </div>
+                                                <div class="col-md-6 request">
+                                                    <textarea name="message" ng-model="option.message"
+                                                              class="form-control input"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ng-form>
+                                    <pre pretty-json="option"></pre>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div id="reservation-footer" class="row"></div>
                 </div>
 
-            </div> <!--Three columns of intense spanish-->
+            </div> <!--"Big green section"-->
 
             <div id="debug" class="row">
                 <div class="col-md-6">
@@ -299,6 +400,7 @@
 <script src="assets/libs/jquery/dist/jquery.min.js"></script>
 <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="assets/libs/angular/angular.min.js"></script>
+<script src="assets/libs/ng-prettyjson/dist/ng-prettyjson.min.js"></script>
 <script src="assets/libs/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
 
 <!-- Custom libraries -->

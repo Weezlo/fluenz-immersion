@@ -27,9 +27,9 @@ html {
   margin-bottom: 30px;
 }
 #app #content #panel-1 {
-  background: transparent url('assets/temp/img/panel1.PNG') no-repeat center center;
+  background: transparent url('assets/img/panel1.PNG') no-repeat center center;
   width: auto;
-  height: 842px;
+  height: 850px;
   background-size: cover;
 }
 #app #content #panel-2 {
@@ -115,6 +115,79 @@ html {
   width: auto;
   height: 469px;
   background-size: cover;
+}
+#app #content #panel-10 {
+  padding: 5% 8%;
+  background-size: cover;
+  background-color: #97dcd7;
+}
+#app #content #panel-10 .col {
+  background-size: cover;
+  background-color: #ffffff;
+}
+#app #content #panel-10 .fluenz-title {
+  padding-left: 6%;
+}
+#app #content #panel-10 #bullets,
+#app #content #panel-10 #dates-and-activities {
+  padding-left: 3%;
+  padding-right: 3%;
+}
+#app #content #panel-10 #bullets ul {
+  font-size: 24px;
+}
+#app #content #panel-10 #bullets li {
+  margin-bottom: 4%;
+  font-weight: bold;
+}
+#app #content #panel-10 #house-images {
+  margin-bottom: 4%;
+}
+#app #content #panel-10 #house-images .col-md-6 {
+  padding-right: 0;
+  padding-left: 0;
+}
+#app #content #panel-10 #house-images #house-1 .mosaic-img {
+  border: solid orange thick;
+}
+#app #content #panel-10 #house-images #house-2 .mosaic-img {
+  border: solid blue thick;
+}
+#app #content #panel-10 #house-images .mosaic-img {
+  height: 700px;
+  text-align: center;
+  vertical-align: middle;
+}
+#app #content #panel-10 #dates-and-activities {
+  margin-bottom: 6%;
+}
+#app #content #panel-10 #dates-and-activities p {
+  font-size: 21px;
+}
+#app #content #panel-10 #city {
+  background: transparent url('assets/temp/img/cityPanel.PNG') no-repeat center center;
+  width: auto;
+  height: 223px;
+  background-size: cover;
+}
+#app #content #panel-10 #reservation-header {
+  background-size: cover;
+  background-color: #2fb8ae;
+  color: white;
+  font-size: 55px;
+  text-align: center;
+  height: 120px;
+}
+#app #content #panel-10 #reservation-header #header {
+  margin-top: 1.5%;
+}
+#app #content #panel-10 #reservation-form {
+  background-size: cover;
+  background-color: #f0f0f0;
+}
+#app #content #panel-10 #reservation-form .form-row {
+  padding-left: 3%;
+  padding-right: 3%;
 }
 #app #debug {
   display: none;

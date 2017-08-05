@@ -1,32 +1,61 @@
-var myApp = angular.module('fluenzIntensiveTraining', ['ui.router']);
+var myApp = angular.module('fluenzIntensiveTraining', ['ui.router', 'ngPrettyJson']);
 
 myApp.config(function ($stateProvider) {
-    var helloState = {
-        name: 'hello',
-        url: '/hello',
-        template: '<h3>hello world!</h3>'
-    };
-
-    var aboutState = {
-        name: 'about',
-        url: '/about',
-        template: '<h3>Its the UI-Router hello world app!</h3>'
-    };
-
-    $stateProvider.state(helloState);
-    $stateProvider.state(aboutState);
+    //region debug
+    // var helloState = {
+    //     name: 'hello',
+    //     url: '/hello',
+    //     template: '<h3>hello world!</h3>'
+    // };
+    //
+    // var aboutState = {
+    //     name: 'about',
+    //     url: '/about',
+    //     template: '<h3>Its the UI-Router hello world app!</h3>'
+    // };
+    //
+    // $stateProvider.state(helloState);
+    // $stateProvider.state(aboutState);
+    //endregion
 });
 
 //region Controllers
 myApp.controller('TestController', ['$scope', '$http', function ($scope, $http) {
     $scope.selections = [
         {name:'single', label:'SINGLE'},
-        {name:'double', label:'DOUBLE'},
+        {name:'double', label:'DOUBLE'}
     ];
 
     $scope.occupancy = $scope.selections[0];
-    $scope.reservationDate = 'Sept 10-16';
-    $scope.location = 'MEXICO CITY';
+    $scope.location = 'ANTIGUA';
+
+    $scope.formOptions = [
+        {
+            reservationDate: 'JAN 8-13',
+            location: $scope.location,
+            name: '',
+            email: '',
+            message: ''
+        },{
+            reservationDate: 'JAN 15-20',
+            location: $scope.location,
+            name: '',
+            email: '',
+            message: ''
+        },{
+            reservationDate: 'JAN 22-27',
+            location: $scope.location,
+            name: '',
+            email: '',
+            message: ''
+        },{
+            reservationDate: 'JAN/FEB 29-3',
+            location: $scope.location,
+            name: '',
+            email: '',
+            message: ''
+        }
+    ];
 
 
     $scope.placeReservation = function () {
