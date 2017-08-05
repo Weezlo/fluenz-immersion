@@ -27,7 +27,7 @@ html {
   margin-bottom: 30px;
 }
 #app #content #panel-1 {
-  background: transparent url('assets/img/panel1.PNG') no-repeat center center;
+  background: transparent url('assets/img/firstPanel.png') no-repeat center center;
   width: auto;
   height: 850px;
   background-size: cover;
