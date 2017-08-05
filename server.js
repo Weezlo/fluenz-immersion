@@ -32,8 +32,8 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
-//var port = normalizePort(process.env.PORT || '8000'); //Dev
-var port = normalizePort(process.env.PORT || '80'); //Production
+var port = normalizePort(process.env.PORT || '8000'); //Dev
+//var port = normalizePort(process.env.PORT || '80'); //Production
 app.set('port', port);
 
 /**
@@ -41,8 +41,8 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
-//server.listen(port); //Dev
-server.listen(port, '0.0.0.0'); //Production
+server.listen(port); //Dev
+//server.listen(port, '0.0.0.0'); //Production
 server.on('error', onError);
 server.on('listening', onListening);
 
