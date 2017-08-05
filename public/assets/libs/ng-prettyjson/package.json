@@ -1,0 +1,101 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "ng-prettyjson",
+        "scope": null,
+        "escapedName": "ng-prettyjson",
+        "name": "ng-prettyjson",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\Users\\Gabe\\WebStormProjects\\FluenzIntensiveTraining\\app\\public"
+    ]
+  ],
+  "_from": "ng-prettyjson@latest",
+  "_id": "ng-prettyjson@0.2.0",
+  "_inCache": true,
+  "_location": "/ng-prettyjson",
+  "_nodeVersion": "4.2.1",
+  "_npmUser": {
+    "name": "darul75",
+    "email": "darul@gmail.com"
+  },
+  "_npmVersion": "2.14.7",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "ng-prettyjson",
+    "scope": null,
+    "escapedName": "ng-prettyjson",
+    "name": "ng-prettyjson",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/ng-prettyjson/-/ng-prettyjson-0.2.0.tgz",
+  "_shasum": "e7036b2f766aee51835e92cc459aade3a1349ba4",
+  "_shrinkwrap": null,
+  "_spec": "ng-prettyjson",
+  "_where": "C:\\Users\\Gabe\\WebStormProjects\\FluenzIntensiveTraining\\app\\public",
+  "author": {
+    "name": "Julien Valéry",
+    "email": "darul75@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/darul75/ng-prettyjson/issues"
+  },
+  "dependencies": {},
+  "description": "AngularJS directive for json pretty output (colors / indent / editor)",
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-bower-task": "0.4.0",
+    "grunt-contrib-cssmin": "~0.6.0",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-karma": "~0.8.2",
+    "karma": "^0.12.31",
+    "karma-chrome-launcher": "^0.1.3",
+    "karma-firefox-launcher": "~0.1.3",
+    "karma-jasmine": "^0.1.5",
+    "karma-phantomjs-launcher": "^0.1.4"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "e7036b2f766aee51835e92cc459aade3a1349ba4",
+    "tarball": "https://registry.npmjs.org/ng-prettyjson/-/ng-prettyjson-0.2.0.tgz"
+  },
+  "filename": "./src/ng-prettyjson.js",
+  "gitHead": "ceea5f0d8dfc48a8e36bd848f36812dfff86d441",
+  "homepage": "https://github.com/darul75/ng-prettyjson",
+  "keywords": [
+    "ace",
+    "angular",
+    "color",
+    "editor",
+    "format",
+    "json",
+    "pretty"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "darul75",
+      "email": "darul75@gmail.com"
+    }
+  ],
+  "name": "ng-prettyjson",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darul75/ng-prettyjson.git"
+  },
+  "scripts": {
+    "test": "grunt test-continuous"
+  },
+  "version": "0.2.0"
+}
