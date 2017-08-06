@@ -36,7 +36,7 @@ body, html {
 
     #panel-1 {
       //border: green solid thick;
-      background: transparent url('assets/img/firstPanel.png') no-repeat center center;
+      background: transparent url('assets/img/home/home.jpg') no-repeat center center;
       width: auto;
       height: 850px;
       background-size: cover;
@@ -58,45 +58,86 @@ body, html {
       }
     }
 
-    #panel-3 {
+    #panel-3, #panel-6 {
 
       .col-md-3 {
         padding-right: 0;
         padding-left: 0;
       }
 
-      #column-1 {
-        .mosaic-img {
-          border: solid orange thick;
-        }
-      }
-
-      #column-2 {
-        .mosaic-img {
-          border: solid blue thick;
-        }
-      }
-
-      #column-3 {
-        .mosaic-img {
-          border: solid orange thick;
-        }
-      }
-
-      #column-4 {
-        .mosaic-img {
-          border: solid blue thick;
-        }
-      }
-
       .mosaic-img {
-        height: 288px;
-        text-align: center;
-        vertical-align: middle;
+        width: auto;
+        height: 424px;
+        background-size: cover;
+      }
+
+      #mosaic-img-1 {
+        background: transparent url('assets/img/mosaic-1/m1-1.jpg') no-repeat center center;
+      }
+
+      #mosaic-img-2 {
+        background: transparent url('assets/img/mosaic-1/m1-2.jpg') no-repeat center center;
+      }
+
+      #mosaic-img-3 {
+        background: transparent url('assets/img/mosaic-1/m1-3.jpg') no-repeat center center;
+      }
+
+      #mosaic-img-4 {
+        background: transparent url('assets/img/mosaic-1/m1-4.jpg') no-repeat center center;
+      }
+
+      #mosaic-img-5 {
+        background: transparent url('assets/img/mosaic-1/m1-5.jpg') no-repeat center center;
+      }
+
+      #mosaic-img-6 {
+        background: transparent url('assets/img/mosaic-1/m1-6.jpg') no-repeat center center;
+      }
+
+      #mosaic-img-7 {
+        background: transparent url('assets/img/mosaic-1/m1-7.jpg') no-repeat center center;
+      }
+
+      #mosaic-img-8 {
+        background: transparent url('assets/img/mosaic-1/m1-8.jpg') no-repeat center center;
+      }
+
+      #mosaic-img-9 {
+        background: transparent url('assets/img/mosaic-1/m1-9.jpg') no-repeat center center;
+      }
+
+      #mosaic-img-10 {
+        background: transparent url('assets/img/mosaic-1/m1-10.jpg') no-repeat center center;
+      }
+
+      #mosaic-img-11 {
+        //background: transparent url('assets/temp/img/gabe.PNG') no-repeat center center;
+        background: transparent url('assets/img/mosaic-1/m1-11.jpg') no-repeat center center;
+      }
+
+      #mosaic-img-12 {
+        background: transparent url('assets/img/mosaic-1/m1-12.jpg') no-repeat center center;
+      }
+
+      #house-mosaic-img-1 {
+        background: transparent url('assets/img/mosaic-2/m2-1.jpg') no-repeat center center;
+      }
+
+      #house-mosaic-img-2 {
+        background: transparent url('assets/img/mosaic-2/m2-2.jpg') no-repeat center center;
+      }
+
+      #house-mosaic-img-3 {
+        background: transparent url('assets/img/mosaic-2/m2-3.jpg') no-repeat center center;
+      }
+
+      #house-mosaic-img-4 {
+        background: transparent url('assets/img/mosaic-2/m2-4.jpg') no-repeat center center;
       }
     }
 
-    #panel-4, #panel-9  {
+    #panel-4, #panel-9 {
       margin-left: 12%;
       margin-right: 12%;
 
@@ -108,13 +149,12 @@ body, html {
       }
     }
 
-    #panel-5, #panel-7  {
+    #panel-5, #panel-7 {
 
-      padding-top: 100px;
-      padding-left: 12%;
-      padding-right: 12%;
+      padding: 100px 12% 20px;
       background-size: cover;
-      background-color: #f8f7f3;
+      //background-color: #f8f7f3;
+      background-color: black;
 
       p {
         font-size: 21px;
@@ -122,37 +162,20 @@ body, html {
       }
     }
 
-    #panel-6 {
-      margin-top: 20px;
-      .col-md-3 {
-        padding-right: 0;
-        padding-left: 0;
-      }
-
-      .mosaic-img {
-        border: solid orange thick;
-        height: 288px;
-        text-align: center;
-        vertical-align: middle;
-      }
-    }
-
     #panel-8 {
-      //border: green solid thick;
-      margin-top: 50px;
       margin-bottom: 50px;
-      background: transparent url('assets/temp/img/sonia.PNG') no-repeat center center;
+      background: transparent url('assets/img/sonia/sonia.jpg') no-repeat center center;
       width: auto;
-      height: 469px;
+      height: 630px;
       background-size: cover;
     }
 
-    #panel-10  {
+    #panel-10 {
       padding: 5% 8%;
       background-size: cover;
-      background-color: #97dcd7;
+      background: url('assets/img/panel-10/background.jpg') no-repeat, linear-gradient(#97dcd7, #97dcd7);
 
-      .col{
+      .col {
         background-size: cover;
         background-color: #ffffff;
       }
@@ -161,12 +184,12 @@ body, html {
         padding-left: 6%;
       }
 
-      #bullets, #dates-and-activities {
+      .bullets, #dates-and-activities {
         padding-left: 3%;
         padding-right: 3%;
       }
 
-      #bullets {
+      .bullets {
         ul {
           font-size: 24px;
         }
@@ -177,7 +200,7 @@ body, html {
         }
       }
 
-      #house-images{
+      #house-images {
         margin-bottom: 4%;
 
         .col-md-6 {
@@ -185,21 +208,26 @@ body, html {
           padding-left: 0;
         }
 
-        #house-1 {
-          .mosaic-img {
-            border: solid orange thick;
-          }
+        #house-mosaic-2-img-1 {
+          background: transparent url('assets/img/mosaic-3/m3-1.jpg') no-repeat center center;
         }
-        #house-2{
-          .mosaic-img {
-            border: solid blue thick;
-          }
+
+        #house-mosaic-2-img-2 {
+          background: transparent url('assets/img/mosaic-3/m3-2.jpg') no-repeat center center;
+        }
+
+        #house-mosaic-2-img-3 {
+          background: transparent url('assets/img/mosaic-3/m3-3.jpg') no-repeat center center;
+        }
+
+        #house-mosaic-2-img-4 {
+          background: transparent url('assets/img/mosaic-3/m3-4.jpg') no-repeat center center;
         }
 
         .mosaic-img {
-          height: 700px;
-          text-align: center;
-          vertical-align: middle;
+          width: auto;
+          height: 400px;
+          background-size: cover;
         }
       }
 
@@ -211,14 +239,14 @@ body, html {
         }
       }
 
-      #city{
-        background: transparent url('assets/temp/img/cityPanel.PNG') no-repeat center center;
+      #city {
+        background: transparent url('assets/img/panel-10/city.jpg') no-repeat center center;
         width: auto;
         height: 223px;
         background-size: cover;
       }
 
-      #reservation-header{
+      #reservation-header {
         background-size: cover;
         background-color: #2fb8ae;
         color: white;
@@ -249,9 +277,86 @@ body, html {
         }
       }
     }
-  }
 
-  #debug {
-    display: none;
+    #panel-11 {
+
+      .fluenz-title, .bullets {
+        padding: 10px 12% 20px;
+      }
+
+      #coach-mosaic {
+
+        .col-md-3 {
+          padding-right: 0;
+          padding-left: 0;
+        }
+
+        .mosaic-img {
+          width: auto;
+          height: 424px;
+          background-size: cover;
+        }
+
+        #coach-mosaic-img-1 {
+          background: transparent url('assets/img/mosaic-4/m4-1.jpg') no-repeat center center;
+        }
+
+        #coach-mosaic-img-2 {
+          background: transparent url('assets/img/mosaic-4/m4-2.jpg') no-repeat center center;
+        }
+
+        #coach-mosaic-img-3 {
+          background: transparent url('assets/img/mosaic-4/m4-3.jpg') no-repeat center center;
+        }
+
+        #coach-mosaic-img-4 {
+          background: transparent url('assets/img/mosaic-4/m4-4.jpg') no-repeat center center;
+        }
+      }
+
+      .bullets {
+        padding-top: 100px;
+        ul {
+          font-size: 24px;
+        }
+
+        li {
+          margin-bottom: 4%;
+          font-weight: bold;
+        }
+      }
+    }
+
+    #panel-12 {
+
+      background-size: cover;
+      background: linear-gradient(#0073c4, #0996d4);
+
+      .fluenz-title {
+        color: white;
+        padding: 10px 12% 20px;
+
+        .col-md-9 {
+          padding-left: 0;
+        }
+      }
+
+      p {
+        color: white;
+        padding: 10px 12% 20px;
+        font-size: 21px;
+        font-weight: bold;
+      }
+
+      a {
+        color: white;
+        font-size: 21px;
+        font-weight: bold;
+      }
+    }
+
+    #debug {
+      display: none;
+    }
   }
 }

@@ -27,7 +27,7 @@ html {
   margin-bottom: 30px;
 }
 #app #content #panel-1 {
-  background: transparent url('assets/img/firstPanel.png') no-repeat center center;
+  background: transparent url('assets/img/home/home.jpg') no-repeat center center;
   width: auto;
   height: 850px;
   background-size: cover;
@@ -44,26 +44,80 @@ html {
 #app #content #panel-2 .link h5 {
   display: inline-block;
 }
-#app #content #panel-3 .col-md-3 {
+#app #content #panel-3 .col-md-3,
+#app #content #panel-6 .col-md-3 {
   padding-right: 0;
   padding-left: 0;
 }
-#app #content #panel-3 #column-1 .mosaic-img {
-  border: solid orange thick;
+#app #content #panel-3 .mosaic-img,
+#app #content #panel-6 .mosaic-img {
+  width: auto;
+  height: 424px;
+  background-size: cover;
 }
-#app #content #panel-3 #column-2 .mosaic-img {
-  border: solid blue thick;
+#app #content #panel-3 #mosaic-img-1,
+#app #content #panel-6 #mosaic-img-1 {
+  background: transparent url('assets/img/mosaic-1/m1-1.jpg') no-repeat center center;
 }
-#app #content #panel-3 #column-3 .mosaic-img {
-  border: solid orange thick;
+#app #content #panel-3 #mosaic-img-2,
+#app #content #panel-6 #mosaic-img-2 {
+  background: transparent url('assets/img/mosaic-1/m1-2.jpg') no-repeat center center;
 }
-#app #content #panel-3 #column-4 .mosaic-img {
-  border: solid blue thick;
+#app #content #panel-3 #mosaic-img-3,
+#app #content #panel-6 #mosaic-img-3 {
+  background: transparent url('assets/img/mosaic-1/m1-3.jpg') no-repeat center center;
 }
-#app #content #panel-3 .mosaic-img {
-  height: 288px;
-  text-align: center;
-  vertical-align: middle;
+#app #content #panel-3 #mosaic-img-4,
+#app #content #panel-6 #mosaic-img-4 {
+  background: transparent url('assets/img/mosaic-1/m1-4.jpg') no-repeat center center;
+}
+#app #content #panel-3 #mosaic-img-5,
+#app #content #panel-6 #mosaic-img-5 {
+  background: transparent url('assets/img/mosaic-1/m1-5.jpg') no-repeat center center;
+}
+#app #content #panel-3 #mosaic-img-6,
+#app #content #panel-6 #mosaic-img-6 {
+  background: transparent url('assets/img/mosaic-1/m1-6.jpg') no-repeat center center;
+}
+#app #content #panel-3 #mosaic-img-7,
+#app #content #panel-6 #mosaic-img-7 {
+  background: transparent url('assets/img/mosaic-1/m1-7.jpg') no-repeat center center;
+}
+#app #content #panel-3 #mosaic-img-8,
+#app #content #panel-6 #mosaic-img-8 {
+  background: transparent url('assets/img/mosaic-1/m1-8.jpg') no-repeat center center;
+}
+#app #content #panel-3 #mosaic-img-9,
+#app #content #panel-6 #mosaic-img-9 {
+  background: transparent url('assets/img/mosaic-1/m1-9.jpg') no-repeat center center;
+}
+#app #content #panel-3 #mosaic-img-10,
+#app #content #panel-6 #mosaic-img-10 {
+  background: transparent url('assets/img/mosaic-1/m1-10.jpg') no-repeat center center;
+}
+#app #content #panel-3 #mosaic-img-11,
+#app #content #panel-6 #mosaic-img-11 {
+  background: transparent url('assets/img/mosaic-1/m1-11.jpg') no-repeat center center;
+}
+#app #content #panel-3 #mosaic-img-12,
+#app #content #panel-6 #mosaic-img-12 {
+  background: transparent url('assets/img/mosaic-1/m1-12.jpg') no-repeat center center;
+}
+#app #content #panel-3 #house-mosaic-img-1,
+#app #content #panel-6 #house-mosaic-img-1 {
+  background: transparent url('assets/img/mosaic-2/m2-1.jpg') no-repeat center center;
+}
+#app #content #panel-3 #house-mosaic-img-2,
+#app #content #panel-6 #house-mosaic-img-2 {
+  background: transparent url('assets/img/mosaic-2/m2-2.jpg') no-repeat center center;
+}
+#app #content #panel-3 #house-mosaic-img-3,
+#app #content #panel-6 #house-mosaic-img-3 {
+  background: transparent url('assets/img/mosaic-2/m2-3.jpg') no-repeat center center;
+}
+#app #content #panel-3 #house-mosaic-img-4,
+#app #content #panel-6 #house-mosaic-img-4 {
+  background: transparent url('assets/img/mosaic-2/m2-4.jpg') no-repeat center center;
 }
 #app #content #panel-4,
 #app #content #panel-9 {
@@ -84,42 +138,26 @@ html {
 }
 #app #content #panel-5,
 #app #content #panel-7 {
-  padding-top: 100px;
-  padding-left: 12%;
-  padding-right: 12%;
+  padding: 100px 12% 20px;
   background-size: cover;
-  background-color: #f8f7f3;
+  background-color: black;
 }
 #app #content #panel-5 p,
 #app #content #panel-7 p {
   font-size: 21px;
   margin-bottom: 20px;
 }
-#app #content #panel-6 {
-  margin-top: 20px;
-}
-#app #content #panel-6 .col-md-3 {
-  padding-right: 0;
-  padding-left: 0;
-}
-#app #content #panel-6 .mosaic-img {
-  border: solid orange thick;
-  height: 288px;
-  text-align: center;
-  vertical-align: middle;
-}
 #app #content #panel-8 {
-  margin-top: 50px;
   margin-bottom: 50px;
-  background: transparent url('assets/temp/img/sonia.PNG') no-repeat center center;
+  background: transparent url('assets/img/sonia/sonia.jpg') no-repeat center center;
   width: auto;
-  height: 469px;
+  height: 630px;
   background-size: cover;
 }
 #app #content #panel-10 {
   padding: 5% 8%;
   background-size: cover;
-  background-color: #97dcd7;
+  background: url('assets/img/panel-10/background.jpg') no-repeat, linear-gradient(#97dcd7, #97dcd7);
 }
 #app #content #panel-10 .col {
   background-size: cover;
@@ -128,15 +166,15 @@ html {
 #app #content #panel-10 .fluenz-title {
   padding-left: 6%;
 }
-#app #content #panel-10 #bullets,
+#app #content #panel-10 .bullets,
 #app #content #panel-10 #dates-and-activities {
   padding-left: 3%;
   padding-right: 3%;
 }
-#app #content #panel-10 #bullets ul {
+#app #content #panel-10 .bullets ul {
   font-size: 24px;
 }
-#app #content #panel-10 #bullets li {
+#app #content #panel-10 .bullets li {
   margin-bottom: 4%;
   font-weight: bold;
 }
@@ -147,16 +185,22 @@ html {
   padding-right: 0;
   padding-left: 0;
 }
-#app #content #panel-10 #house-images #house-1 .mosaic-img {
-  border: solid orange thick;
+#app #content #panel-10 #house-images #house-mosaic-2-img-1 {
+  background: transparent url('assets/img/mosaic-3/m3-1.jpg') no-repeat center center;
 }
-#app #content #panel-10 #house-images #house-2 .mosaic-img {
-  border: solid blue thick;
+#app #content #panel-10 #house-images #house-mosaic-2-img-2 {
+  background: transparent url('assets/img/mosaic-3/m3-2.jpg') no-repeat center center;
+}
+#app #content #panel-10 #house-images #house-mosaic-2-img-3 {
+  background: transparent url('assets/img/mosaic-3/m3-3.jpg') no-repeat center center;
+}
+#app #content #panel-10 #house-images #house-mosaic-2-img-4 {
+  background: transparent url('assets/img/mosaic-3/m3-4.jpg') no-repeat center center;
 }
 #app #content #panel-10 #house-images .mosaic-img {
-  height: 700px;
-  text-align: center;
-  vertical-align: middle;
+  width: auto;
+  height: 400px;
+  background-size: cover;
 }
 #app #content #panel-10 #dates-and-activities {
   margin-bottom: 6%;
@@ -165,7 +209,7 @@ html {
   font-size: 21px;
 }
 #app #content #panel-10 #city {
-  background: transparent url('assets/temp/img/cityPanel.PNG') no-repeat center center;
+  background: transparent url('assets/img/panel-10/city.jpg') no-repeat center center;
   width: auto;
   height: 223px;
   background-size: cover;
@@ -189,6 +233,63 @@ html {
   padding-left: 3%;
   padding-right: 3%;
 }
-#app #debug {
+#app #content #panel-11 .fluenz-title,
+#app #content #panel-11 .bullets {
+  padding: 10px 12% 20px;
+}
+#app #content #panel-11 #coach-mosaic .col-md-3 {
+  padding-right: 0;
+  padding-left: 0;
+}
+#app #content #panel-11 #coach-mosaic .mosaic-img {
+  width: auto;
+  height: 424px;
+  background-size: cover;
+}
+#app #content #panel-11 #coach-mosaic #coach-mosaic-img-1 {
+  background: transparent url('assets/img/mosaic-4/m4-1.jpg') no-repeat center center;
+}
+#app #content #panel-11 #coach-mosaic #coach-mosaic-img-2 {
+  background: transparent url('assets/img/mosaic-4/m4-2.jpg') no-repeat center center;
+}
+#app #content #panel-11 #coach-mosaic #coach-mosaic-img-3 {
+  background: transparent url('assets/img/mosaic-4/m4-3.jpg') no-repeat center center;
+}
+#app #content #panel-11 #coach-mosaic #coach-mosaic-img-4 {
+  background: transparent url('assets/img/mosaic-4/m4-4.jpg') no-repeat center center;
+}
+#app #content #panel-11 .bullets {
+  padding-top: 100px;
+}
+#app #content #panel-11 .bullets ul {
+  font-size: 24px;
+}
+#app #content #panel-11 .bullets li {
+  margin-bottom: 4%;
+  font-weight: bold;
+}
+#app #content #panel-12 {
+  background-size: cover;
+  background: linear-gradient(#0073c4, #0996d4);
+}
+#app #content #panel-12 .fluenz-title {
+  color: white;
+  padding: 10px 12% 20px;
+}
+#app #content #panel-12 .fluenz-title .col-md-9 {
+  padding-left: 0;
+}
+#app #content #panel-12 p {
+  color: white;
+  padding: 10px 12% 20px;
+  font-size: 21px;
+  font-weight: bold;
+}
+#app #content #panel-12 a {
+  color: white;
+  font-size: 21px;
+  font-weight: bold;
+}
+#app #content #debug {
   display: none;
 }
