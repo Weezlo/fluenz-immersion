@@ -8,7 +8,7 @@ html {
   width: 100%;
 }
 #app #content {
-  margin-bottom: 300px;
+  margin-bottom: 15px;
 }
 #app #content .fluenz-title {
   color: gray;
@@ -283,12 +283,67 @@ html {
   color: white;
   padding: 10px 12% 20px;
   font-size: 21px;
-  font-weight: bold;
 }
-#app #content #panel-12 a {
-  color: white;
+#app #content #panel-13 #city-mosaic .col-md-3 {
+  padding-right: 0;
+  padding-left: 0;
+}
+#app #content #panel-13 #city-mosaic .mosaic-img {
+  width: auto;
+  height: 424px;
+  background-size: cover;
+}
+#app #content #panel-13 #city-mosaic #city-mosaic-img-1 {
+  background: transparent url('assets/img/mosaic-5/m5-1.jpg') no-repeat center center;
+}
+#app #content #panel-13 #city-mosaic #city-mosaic-img-2 {
+  background: transparent url('assets/img/mosaic-5/m5-2.jpg') no-repeat center center;
+}
+#app #content #panel-13 #city-mosaic #city-mosaic-img-3 {
+  background: transparent url('assets/img/mosaic-5/m5-3.jpg') no-repeat center center;
+}
+#app #content #panel-13 #city-mosaic #city-mosaic-img-4 {
+  background: transparent url('assets/img/mosaic-5/m5-4.jpg') no-repeat center center;
+}
+#app #content #panel-14 .container {
+  padding-left: 12%;
+}
+#app #content #panel-14 #fluenz {
+  color: red;
+}
+#app #content #panel-14 p {
   font-size: 21px;
-  font-weight: bold;
+  margin-bottom: 30px;
+}
+#app #content #panel-15 {
+  background-size: cover;
+  background-color: #2fb8ae;
+  color: white;
+  font-size: 55px;
+  text-align: center;
+  height: 185px;
+}
+#app #content #panel-15 #make-your-reservation {
+  margin-top: 1.5%;
+}
+#app #content #footer {
+  text-align: center;
+  height: 185px;
+  font-size: 22px;
+  padding-top: 40px;
+}
+#app #content #footer a {
+  color: #2fb8ae;
+}
+#app #content #footer #footer-logo {
+  display: inline-block;
+  background: transparent url('assets/tmp/img/footer-logo.PNG') no-repeat center center;
+  width: 186px;
+  height: 77px;
+  background-size: cover;
+}
+#app #content #footer #contact-us {
+  display: inline-block;
 }
 #app #content #debug {
   display: none;
