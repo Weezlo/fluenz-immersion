@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'OpenSans-Regular';
+  src: url('/assets/fonts/OpenSans-Regular.ttf');
+}
+@font-face {
+  font-family: 'OpenSans-Semibold';
+  src: url('/assets/fonts/OpenSans-Semibold.ttf');
+}
+@font-face {
+  font-family: 'OpenSans-Light';
+  src: url('/assets/fonts/OpenSans-Light.ttf');
+}
 body,
 html {
   height: 100%;
@@ -11,12 +23,14 @@ html {
   margin-bottom: 15px;
 }
 #app #content .fluenz-title {
+  font-family: OpenSans-Light;
   color: gray;
   font-size: 61px;
   margin-top: 50px;
   margin-bottom: 50px;
 }
 #app #content .fluenz-blurb-title {
+  font-family: OpenSans-Regular;
   color: red;
   font-size: 28px;
   margin-bottom: 20px;
@@ -33,16 +47,18 @@ html {
   background-size: cover;
 }
 #app #content #panel-2 {
+  height: 100px;
   margin-left: 10%;
   margin-right: 10%;
 }
 #app #content #panel-2 .link {
-  padding-bottom: 10px;
-  padding-top: 10px;
+  font-family: OpenSans-Semibold;
+  padding-top: 2.5%;
   text-align: center;
 }
-#app #content #panel-2 .link h5 {
-  display: inline-block;
+#app #content #panel-2 .link span {
+  font-size: 20px;
+  font-size: 1.2vw;
 }
 #app #content #panel-3 .col-md-3,
 #app #content #panel-6 .col-md-3 {
@@ -119,6 +135,9 @@ html {
 #app #content #panel-6 #house-mosaic-img-4 {
   background: transparent url('assets/img/mosaic-2/m2-4.jpg') no-repeat center center;
 }
+#app #content #panel-4 {
+  margin-bottom: 80px;
+}
 #app #content #panel-4,
 #app #content #panel-9 {
   margin-left: 12%;
@@ -134,18 +153,25 @@ html {
 #app #content #panel-9 .col-md-4 p,
 #app #content #panel-4 .col-md-6 p,
 #app #content #panel-9 .col-md-6 p {
+  font-family: OpenSans-Regular;
   font-size: 21px;
 }
 #app #content #panel-5,
 #app #content #panel-7 {
-  padding: 100px 12% 20px;
+  padding-right: 12%;
+  padding-left: 12%;
+  padding-bottom: 20px;
   background-size: cover;
   background-color: #f8f7f3;
 }
 #app #content #panel-5 p,
 #app #content #panel-7 p {
+  font-family: OpenSans-Regular;
   font-size: 21px;
   margin-bottom: 20px;
+}
+#app #content #panel-7 {
+  padding-top: 80px;
 }
 #app #content #panel-8 {
   margin-bottom: 50px;
@@ -175,6 +201,7 @@ html {
   font-size: 24px;
 }
 #app #content #panel-10 .bullets li {
+  font-family: OpenSans-Semibold;
   margin-bottom: 4%;
   font-weight: bold;
 }
@@ -206,6 +233,7 @@ html {
   margin-bottom: 6%;
 }
 #app #content #panel-10 #dates-and-activities p {
+  font-family: OpenSans-Regular;
   font-size: 21px;
 }
 #app #content #panel-10 #city {
@@ -215,6 +243,7 @@ html {
   background-size: cover;
 }
 #app #content #panel-10 #reservation-header {
+  font-family: OpenSans-Light;
   background-size: cover;
   background-color: #2fb8ae;
   color: white;
@@ -265,6 +294,7 @@ html {
   font-size: 24px;
 }
 #app #content #panel-11 .bullets li {
+  font-family: OpenSans-Regular;
   margin-bottom: 4%;
   font-weight: bold;
 }
@@ -280,6 +310,7 @@ html {
   padding-left: 0;
 }
 #app #content #panel-12 p {
+  font-family: OpenSans-Regular;
   color: white;
   padding: 10px 12% 20px;
   font-size: 21px;
@@ -312,6 +343,7 @@ html {
   color: red;
 }
 #app #content #panel-14 p {
+  font-family: OpenSans-Regular;
   font-size: 21px;
   margin-bottom: 30px;
 }
@@ -324,6 +356,7 @@ html {
   height: 185px;
 }
 #app #content #panel-15 #make-your-reservation {
+  font-family: OpenSans-Light;
   margin-top: 1.5%;
 }
 #app #content #footer {
@@ -331,6 +364,8 @@ html {
   height: 185px;
   font-size: 22px;
   padding-top: 40px;
+  font-family: OpenSans-Regular;
+  color: #2fb8ae;
 }
 #app #content #footer a {
   color: #2fb8ae;

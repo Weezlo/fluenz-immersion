@@ -1,3 +1,18 @@
+@font-face {
+  font-family: 'OpenSans-Regular';
+  src: url('/assets/fonts/OpenSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'OpenSans-Semibold';
+  src: url('/assets/fonts/OpenSans-Semibold.ttf');
+}
+
+@font-face {
+  font-family: 'OpenSans-Light';
+  src: url('/assets/fonts/OpenSans-Light.ttf');
+}
+
 body, html {
   height: 100%;
 }
@@ -16,6 +31,7 @@ body, html {
     margin-bottom: 15px;
 
     .fluenz-title {
+      font-family: OpenSans-Light;
       color: gray;
       font-size: 61px;
       margin-top: 50px;
@@ -23,6 +39,7 @@ body, html {
     }
 
     .fluenz-blurb-title {
+      font-family: OpenSans-Regular;
       color: red;
       font-size: 28px;
       margin-bottom: 20px;
@@ -43,17 +60,18 @@ body, html {
     }
 
     #panel-2 {
-      //border: red solid thick;
+      height: 100px;
       margin-left: 10%;
       margin-right: 10%;
 
       .link {
-        //border: black solid thick;
-        padding-bottom: 10px;
-        padding-top: 10px;
+        font-family: OpenSans-Semibold;
+        //padding-bottom: 10px;
+        padding-top: 2.5%;
         text-align: center;
-        h5 {
-          display: inline-block;
+        span {
+          font-size: 20px;
+          font-size: 1.2vw;
         }
       }
     }
@@ -137,6 +155,10 @@ body, html {
       }
     }
 
+    #panel-4{
+      margin-bottom: 80px;
+    }
+
     #panel-4, #panel-9 {
       margin-left: 12%;
       margin-right: 12%;
@@ -144,6 +166,7 @@ body, html {
       .col-md-4, .col-md-6 {
         padding-right: 14px;
         p {
+          font-family: OpenSans-Regular;
           font-size: 21px;
         }
       }
@@ -151,15 +174,22 @@ body, html {
 
     #panel-5, #panel-7 {
 
-      padding: 100px 12% 20px;
+      padding-right: 12%;
+      padding-left: 12%;
+      padding-bottom: 20px;
       background-size: cover;
       background-color: #f8f7f3;
       //background-color: black;
 
       p {
+        font-family: OpenSans-Regular;
         font-size: 21px;
         margin-bottom: 20px;
       }
+    }
+
+    #panel-7 {
+      padding-top: 80px;
     }
 
     #panel-8 {
@@ -195,6 +225,7 @@ body, html {
         }
 
         li {
+          font-family: OpenSans-Semibold;
           margin-bottom: 4%;
           font-weight: bold;
         }
@@ -235,6 +266,7 @@ body, html {
         margin-bottom: 6%;
 
         p {
+          font-family: OpenSans-Regular;
           font-size: 21px;
         }
       }
@@ -247,6 +279,7 @@ body, html {
       }
 
       #reservation-header {
+        font-family: OpenSans-Light;
         background-size: cover;
         background-color: #2fb8ae;
         color: white;
@@ -321,6 +354,7 @@ body, html {
         }
 
         li {
+          font-family: OpenSans-Regular;
           margin-bottom: 4%;
           font-weight: bold;
         }
@@ -342,6 +376,7 @@ body, html {
       }
 
       p {
+        font-family: OpenSans-Regular;
         color: white;
         padding: 10px 12% 20px;
         font-size: 21px;
@@ -390,6 +425,7 @@ body, html {
       }
 
       p {
+        font-family: OpenSans-Regular;
         font-size: 21px;
         margin-bottom: 30px;
       }
@@ -404,6 +440,7 @@ body, html {
       height: 185px;
 
       #make-your-reservation {
+        font-family: OpenSans-Light;
         margin-top: 1.5%;
       }
     }
@@ -413,12 +450,14 @@ body, html {
       height: 185px;
       font-size: 22px;
       padding-top: 40px;
+      font-family: OpenSans-Regular;
+      color: #2fb8ae;
 
       a {
         color: #2fb8ae;
       }
 
-      #footer-logo{
+      #footer-logo {
         display: inline-block;
         background: transparent url('assets/tmp/img/footer-logo.PNG') no-repeat center center;
         width: 186px;
