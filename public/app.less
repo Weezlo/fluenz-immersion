@@ -155,7 +155,7 @@ body, html {
       }
     }
 
-    #panel-4{
+    #panel-4 {
       margin-bottom: 80px;
     }
 
@@ -300,12 +300,68 @@ body, html {
           padding-left: 3%;
           padding-right: 3%;
 
-          .expanded {
-
+          .col {
+            border-bottom: #999999 solid 2px;
           }
 
-          .collapsed {
+          .reservation-form-header {
+            font-size: 55px;
+            font-family: OpenSans-Light;
+            margin-bottom: 30px;
+            margin-top: 25px;
 
+            .week-number {
+              color: #40bdb3;
+              border-right: #9d9d9d solid 2px;
+            }
+
+            .week-number, .reservation-dates {
+              display: inline-block;
+            }
+          }
+        }
+
+        .inputs {
+          .input {
+            display: block;
+            width: 100%;
+            font-size: 20px;
+            background: #dadada;
+            border-radius: 0;
+            margin-bottom: 20px;
+          }
+
+          .name-email {
+            input {
+              padding: 40px 20px;
+            }
+          }
+
+          .request {
+            height: 184px;
+
+            textarea {
+              padding: 25px 20px;
+              resize: none;
+              height: 100%;
+            }
+          }
+        }
+
+        .button {
+          margin-bottom: 40px;
+
+          input {
+            height: 60px;
+            width: 200px;
+            float: right;
+            border: #39bbb2 solid 2px;
+            background: white;
+
+            font-size: 20px;
+            font-family: OpenSans-Semibold;
+
+            border-radius: 0;
           }
         }
       }

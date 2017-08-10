@@ -232,10 +232,7 @@
             </div> <!--"The method"-->
 
             <!--TODO: styling for bullet-->
-            <!--TODO: map background with gradient-->
-            <!--TODO: images-->
             <!--TODO: margins-->
-            <!--TODO: container-->
             <!--TODO: reservation form-->
             <!--TODO: reservation phone link-->
             <div id="panel-10" class="row">
@@ -310,24 +307,32 @@
                                     <ng-form name="reservationForm">
                                         <div class="col container">
                                             <div class="row reservation-form-header">
-                                                <div class="col-md-3 week-number">Week {{$index + 1}}</div>
-                                                <div class="col-md-3 reservation-dates">{{option.reservationDate}}</div>
+                                                <div class="col-md-9">
+                                                    <div class="week-number">Week {{$index + 1}}</div>
+                                                    <div class="reservation-dates">{{option.reservationDate}}</div>
+                                                </div>
                                             </div>
                                             <div class="row inputs">
                                                 <div class="col-md-6 name-email">
                                                     <input name="name" ng-model="option.name"
-                                                           class="form-control input">
+                                                           class="input form-control name" placeholder="NAME">
                                                     <input name="email" ng-model="option.email"
-                                                           class="form-control input">
+                                                           class="input form-control" placeholder="EMAIL">
                                                 </div>
                                                 <div class="col-md-6 request">
                                                     <textarea name="message" ng-model="option.message"
-                                                              class="form-control input"></textarea>
+                                                              class="input form-control"
+                                                              placeholder="YOUR REQUEST"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="row ">
+                                                <div class="col-lg-12 button">
+                                                    <input type="submit" value="SEND" class="btn">
                                                 </div>
                                             </div>
                                         </div>
                                     </ng-form>
-                                    <pre pretty-json="option"></pre>
+                                    <pre ng-show="false" pretty-json="option"></pre>
                                 </div>
                             </form>
                         </div>
@@ -511,10 +516,10 @@
             <div id="footer" class="row">
                 <div id="footer-logo"></div>
                 <div id="contact-us">
-                    <span><a target="_blank" href="https://www.fluenz.com">Official Website</a> | <a href="mailto:fluenz@fluenz.com">Contact Us</a> </span>
+                    <span><a target="_blank" href="https://www.fluenz.com">Official Website</a> | <a
+                            href="mailto:fluenz@fluenz.com">Contact Us</a> </span>
                 </div>
             </div> <!--Site footer-->
-
 
 
             <div id="debug" class="row">

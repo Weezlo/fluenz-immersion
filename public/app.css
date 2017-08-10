@@ -262,6 +262,55 @@ html {
   padding-left: 3%;
   padding-right: 3%;
 }
+#app #content #panel-10 #reservation-form .form-row .col {
+  border-bottom: #999999 solid 2px;
+}
+#app #content #panel-10 #reservation-form .form-row .reservation-form-header {
+  font-size: 55px;
+  font-family: OpenSans-Light;
+  margin-bottom: 30px;
+  margin-top: 25px;
+}
+#app #content #panel-10 #reservation-form .form-row .reservation-form-header .week-number {
+  color: #40bdb3;
+  border-right: #9d9d9d solid 2px;
+}
+#app #content #panel-10 #reservation-form .form-row .reservation-form-header .week-number,
+#app #content #panel-10 #reservation-form .form-row .reservation-form-header .reservation-dates {
+  display: inline-block;
+}
+#app #content #panel-10 #reservation-form .inputs .input {
+  display: block;
+  width: 100%;
+  font-size: 20px;
+  background: #dadada;
+  border-radius: 0;
+  margin-bottom: 20px;
+}
+#app #content #panel-10 #reservation-form .inputs .name-email input {
+  padding: 40px 20px;
+}
+#app #content #panel-10 #reservation-form .inputs .request {
+  height: 184px;
+}
+#app #content #panel-10 #reservation-form .inputs .request textarea {
+  padding: 25px 20px;
+  resize: none;
+  height: 100%;
+}
+#app #content #panel-10 #reservation-form .button {
+  margin-bottom: 40px;
+}
+#app #content #panel-10 #reservation-form .button input {
+  height: 60px;
+  width: 200px;
+  float: right;
+  border: #39bbb2 solid 2px;
+  background: white;
+  font-size: 20px;
+  font-family: OpenSans-Semibold;
+  border-radius: 0;
+}
 #app #content #panel-11 .fluenz-title,
 #app #content #panel-11 .bullets {
   padding: 10px 12% 20px;
