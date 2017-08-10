@@ -59,16 +59,16 @@
             <div id="panel-2" class="row">
                 <div id="links" class="col container">
                     <div id="links-row" class="row">
-                        <div id="intensive-spanish" class="link col-md-3">
+                        <div id="intensive-spanish" class="link col-md-3" ng-click="goTo('panel-4')">
                             <span class="glyphicon glyphicon-arrow-down"></span> <span>INTENSIVE SPANISH</span>
                         </div>
-                        <div id="premium-lodge" class="link col-md-3">
+                        <div id="premium-lodge" class="link col-md-3" ng-click="goTo('panel-10')">
                             <span class="glyphicon glyphicon-arrow-down"></span> <span>PREMIUM LODGE</span>
                         </div>
-                        <div id="results" class="link col-md-3">
+                        <div id="results" class="link col-md-3" ng-click="goTo('panel-14')">
                             <span class="glyphicon glyphicon-arrow-down"></span> <span> RESULTS SINCE 2007</span>
                         </div>
-                        <div id="the-program" class="link col-md-3">
+                        <div id="the-program" class="link col-md-3" ng-click="goTo('panel-9')">
                             <span class="glyphicon glyphicon-arrow-down"></span> <span>THE PROGRAM</span>
                         </div>
                     </div>
@@ -232,11 +232,8 @@
             </div> <!--"The method"-->
 
             <!--TODO: styling for bullet-->
-            <!--TODO: margins-->
-            <!--TODO: reservation form-->
             <!--TODO: reservation phone link-->
             <div id="panel-10" class="row">
-
                 <div class="col container">
                     <div class="row fluenz-title">
                         <div>
@@ -311,13 +308,11 @@
                                                     <div class="week-number">Week {{$index + 1}}</div>
                                                     <div class="reservation-dates">{{option.reservationDate}}</div>
                                                     <div ng-show="option.collapsed" class="open-form"><input
-                                                            type="submit" value="RESERVE" class="btn" ng-click="expandFormRow(option)"></div>
+                                                            type="button" value="RESERVE" class="btn" ng-click="expandFormRow(option)"></div>
                                                 </div>
                                                 <div class="col-md-9" ng-if="!option.collapsed" >
                                                     <div class="week-number">Week {{$index + 1}}</div>
                                                     <div class="reservation-dates">{{option.reservationDate}}</div>
-                                                    <div ng-show="option.collapsed" class="open-form"><input
-                                                            type="submit" value="RESERVE" class="btn" ng-click="expandFormRow(option)"></div>
                                                 </div>
                                             </div>
                                             <div class="row inputs" ng-hide="option.collapsed">
@@ -345,7 +340,10 @@
                             </form>
                         </div>
                     </div>
-                    <div id="reservation-footer" class="row"></div>
+                    <div id="reservation-footer" class="row">
+                        <div>HAVE QUESTIONS ABOUT RESERVING ONLINE?</div>
+                        <div><a>CONTACT US</a> OR CALL US AT  <a>877-358-3695</a></div>
+                    </div>
                 </div>
 
             </div> <!--"Big green section"-->
@@ -516,14 +514,16 @@
                     MAKE YOUR 2018 RESERVATION NOW
                 </div>
                 <div id="reserve-button">
-                    <input value="RESERVE" class="btn btn-default">
+                    <input type="button" value="RESERVE" class="btn btn-default" ng-click="goTo('reservation-header')">
                 </div>
             </div> <!--2018 reservation-->
 
             <!--TODO: Contact Us email -->
             <div id="footer" class="row">
-                <div id="footer-logo"></div>
-                <div id="contact-us">
+                <div id="footer-col" class="col-md-6">
+                    <div id="footer-logo"></div>
+                </div>
+                <div id="contact-us" class="col-md-6">
                     <span><a target="_blank" href="https://www.fluenz.com">Official Website</a> | <a
                             href="mailto:fluenz@fluenz.com">Contact Us</a> </span>
                 </div>

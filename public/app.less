@@ -66,12 +66,11 @@ body, html {
 
       .link {
         font-family: OpenSans-Semibold;
-        //padding-bottom: 10px;
         padding-top: 2.5%;
         text-align: center;
+        cursor: pointer;
         span {
           font-size: 20px;
-          font-size: 1.2vw;
         }
       }
     }
@@ -201,6 +200,7 @@ body, html {
     }
 
     #panel-10 {
+      margin-top: 70px;
       padding: 5% 8%;
       background-size: cover;
       background: url('assets/img/panel-10/background.jpg') no-repeat, linear-gradient(#97dcd7, #97dcd7);
@@ -314,12 +314,15 @@ body, html {
               color: #40bdb3;
               border-right: #9d9d9d solid 2px;
               padding-right: 15px;
-            }
-
-            .week-number, .reservation-dates{
               float: left;
               display: inline-block;
               padding-left: 10px;
+            }
+
+            .reservation-dates {
+              float: left;
+              display: inline-block;
+              padding-left: 25px;
             }
 
             .open-form {
@@ -388,6 +391,18 @@ body, html {
           }
         }
       }
+
+      #reservation-footer {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        text-align: center;
+        font-family: OpenSans-Semibold;
+        font-size: 22px;
+
+        a {
+          color: #2fb8ae
+        }
+      }
     }
 
     #panel-11 {
@@ -444,6 +459,7 @@ body, html {
 
       background-size: cover;
       background: linear-gradient(#0073c4, #0996d4);
+      padding-bottom: 40px;
 
       .fluenz-title {
         color: white;
@@ -516,19 +532,34 @@ body, html {
       color: white;
       font-size: 55px;
       text-align: center;
-      height: 185px;
+      height: 215px;
 
       #make-your-reservation {
         font-family: OpenSans-Light;
         margin-top: 1.5%;
       }
+
+      #reserve-button{
+        input {
+          height: 60px;
+          width: 200px;
+          border: white solid 2px;
+          color: white;
+          background: #39bbb2;
+
+          font-size: 20px;
+          font-family: OpenSans-Semibold;
+
+          border-radius: 0;
+        }
+      }
     }
 
     #footer {
       text-align: center;
-      height: 185px;
       font-size: 22px;
       padding-top: 40px;
+      padding-bottom: 40px;
       font-family: OpenSans-Regular;
       color: #2fb8ae;
 
@@ -536,8 +567,12 @@ body, html {
         color: #2fb8ae;
       }
 
+      #footer-col {
+        padding-right: 0;
+      }
+
       #footer-logo {
-        display: inline-block;
+        margin-left:78%;
         background: transparent url('assets/tmp/img/footer-logo.PNG') no-repeat center center;
         width: 186px;
         height: 77px;
@@ -545,7 +580,9 @@ body, html {
       }
 
       #contact-us {
-        display: inline-block;
+        padding-top: 45px;
+        padding-right: 33%;
+        padding-left: 0;
       }
     }
 

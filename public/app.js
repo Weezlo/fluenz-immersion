@@ -20,7 +20,7 @@ myApp.config(function ($stateProvider) {
 });
 
 //region Controllers
-myApp.controller('TestController', ['$scope', '$http', function ($scope, $http) {
+myApp.controller('TestController', ['$scope', '$http', '$location', '$anchorScroll', function ($scope, $http, $location, $anchorScroll) {
 
     //region forms
     $scope.selections = [
@@ -79,6 +79,11 @@ myApp.controller('TestController', ['$scope', '$http', function ($scope, $http) 
                 $scope.formOptions[i].collapsed = false;
             }
         }
+    };
+
+    $scope.goTo = function(location){
+        $location.hash(location);
+        $anchorScroll();
     };
     //endregion
 
