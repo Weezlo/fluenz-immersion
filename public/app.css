@@ -277,8 +277,13 @@ html {
   padding-right: 15px;
 }
 #app #content #panel-10 #reservation-form .form-row .reservation-form-header .week-number,
-#app #content #panel-10 #reservation-form .form-row .reservation-form-header .reservation-dates,
+#app #content #panel-10 #reservation-form .form-row .reservation-form-header .reservation-dates {
+  float: left;
+  display: inline-block;
+  padding-left: 10px;
+}
 #app #content #panel-10 #reservation-form .form-row .reservation-form-header .open-form {
+  float: right;
   display: inline-block;
   padding-left: 10px;
 }
