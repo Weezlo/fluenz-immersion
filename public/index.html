@@ -307,12 +307,20 @@
                                     <ng-form name="reservationForm">
                                         <div class="col container">
                                             <div class="row reservation-form-header">
-                                                <div class="col-md-9">
+                                                <div class="col-md-9" ng-if="option.collapsed" >
                                                     <div class="week-number">Week {{$index + 1}}</div>
                                                     <div class="reservation-dates">{{option.reservationDate}}</div>
+                                                    <div ng-show="option.collapsed" class="open-form"><input
+                                                            type="submit" value="RESERVE" class="btn" ng-click="expandFormRow(option)"></div>
+                                                </div>
+                                                <div class="col-md-9" ng-if="!option.collapsed" >
+                                                    <div class="week-number">Week {{$index + 1}}</div>
+                                                    <div class="reservation-dates">{{option.reservationDate}}</div>
+                                                    <div ng-show="option.collapsed" class="open-form"><input
+                                                            type="submit" value="RESERVE" class="btn" ng-click="expandFormRow(option)"></div>
                                                 </div>
                                             </div>
-                                            <div class="row inputs">
+                                            <div class="row inputs" ng-hide="option.collapsed">
                                                 <div class="col-md-6 name-email">
                                                     <input name="name" ng-model="option.name"
                                                            class="input form-control name" placeholder="NAME">
@@ -325,9 +333,9 @@
                                                               placeholder="YOUR REQUEST"></textarea>
                                                 </div>
                                             </div>
-                                            <div class="row ">
+                                            <div class="row " ng-hide="option.collapsed">
                                                 <div class="col-lg-12 button">
-                                                    <input type="submit" value="SEND" class="btn">
+                                                    <input type="submit" value="SEND" class="btn" ng-click="placeReservation(option)">
                                                 </div>
                                             </div>
                                         </div>

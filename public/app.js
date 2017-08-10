@@ -21,34 +21,40 @@ myApp.config(function ($stateProvider) {
 
 //region Controllers
 myApp.controller('TestController', ['$scope', '$http', function ($scope, $http) {
+
+    //region forms
     $scope.selections = [
         {name:'single', label:'SINGLE'},
         {name:'double', label:'DOUBLE'}
     ];
 
     $scope.occupancy = $scope.selections[0];
-    $scope.location = 'ANTIGUA';
+    $scope.location = 'MEXICO CITY';
 
     $scope.formOptions = [
         {
+            collapsed: false,
             reservationDate: 'JAN 8-13',
             location: $scope.location,
             name: '',
             email: '',
             message: ''
         },{
+            collapsed: true,
             reservationDate: 'JAN 15-20',
             location: $scope.location,
             name: '',
             email: '',
             message: ''
         },{
+            collapsed: true,
             reservationDate: 'JAN 22-27',
             location: $scope.location,
             name: '',
             email: '',
             message: ''
         },{
+            collapsed: true,
             reservationDate: 'JAN/FEB 29-3',
             location: $scope.location,
             name: '',
@@ -57,21 +63,40 @@ myApp.controller('TestController', ['$scope', '$http', function ($scope, $http) 
         }
     ];
 
+    $scope.expandFormRow = function(formOption){
+        var index = $scope.formOptions.indexOf(formOption);
+        for(var i = 0; i < $scope.formOptions.length; ++i){
+            if(i !== index){
+                $scope.formOptions[i] = {
+                    collapsed: true,
+                    reservationDate: formOption.reservationDate,
+                    location: $scope.location,
+                    name: '',
+                    email: '',
+                    message: ''
+                }
+            } else {
+                $scope.formOptions[i].collapsed = false;
+            }
+        }
+    };
+    //endregion
 
-    $scope.placeReservation = function () {
+    //region HTTP calls
+    $scope.placeReservation = function (formOption) {
         console.log('Calling node with a new reservation');
         $http({
             method: 'POST',
             url: '/spreadsheets/reservations',
             data: {
                 timestamp: new Date(),
-                reservationDates: $scope.reservationDate,
-                location: $scope.location,
+                reservationDates: formOption.reservationDate,
+                location: formOption.location,
                 occupancy: $scope.occupancy.name,
-                firstName: $scope.firstName,
-                lastName: $scope.lastName,
-                reservationEmail: $scope.reservationEmail,
-                message: $scope.message,
+                firstName: formOption.name,
+                lastName: formOption.name,
+                reservationEmail: formOption.email,
+                message: formOption.message,
                 status: 'Pending'
             }
         }).then(function successCallback(result) {
@@ -97,6 +122,7 @@ myApp.controller('TestController', ['$scope', '$http', function ($scope, $http) 
             console.error('Error when requesting a brochure: ', error);
         });
     };
+    //endregion
 
 //region DEBUG
 //     $scope.getSpreadsheet = function() {
