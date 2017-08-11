@@ -15,6 +15,7 @@
     <!-- Bootstrap core CSS -->
     <link href="assets/libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/libs/ng-prettyjson/dist/ng-prettyjson.min.css" rel="stylesheet">
+    <link href="assets/libs/angular-ui-bootstrap/dist/ui-bootstrap-csp.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="app.css" rel="stylesheet">
@@ -298,24 +299,110 @@
                         </div>
                     </div>
                     <div id="reservation-form" class="row">
-                        <div class="col container">
+                        <div ng-if="false" class="col container" id="accordion-1">
+                            <form name="parentReservationForm">
+                                <div class="row form-row">
+                                    <div class="col container">
+                                        <div class="row reservation-form-header">
+                                            <div class="col-md-12" ng-if="formOptions[0].collapsed">
+                                                <div class="week-number">Week 1</div>
+                                                <div class="reservation-dates">{{formOptions[0].reservationDate}}</div>
+                                                <div ng-show="option.collapsed" class="open-form">
+                                                    <a type="button" value="RESERVE" class="btn"
+                                                       ng-click="expandFormRow(formOptions[0])"
+                                                       data-toggle="collapse" data-parent="#accordion"
+                                                       href="#input-1">RESERVE</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9" ng-if="!formOptions[0].collapsed">
+                                                <div class="week-number">Week 1</div>
+                                                <div class="reservation-dates">{{formOptions[0].reservationDate}}</div>
+                                            </div>
+                                        </div>
+                                        <div id="input-1" class="panel-collapse collapse in">
+                                            <div class="row inputs" ng-hide="formOptions[0].collapsed">
+                                                <div class="col-md-6 name-email">
+                                                    <input name="name" ng-model="option.name"
+                                                           class="input form-control name" placeholder="NAME">
+                                                    <input name="email" ng-model="option.email"
+                                                           class="input form-control" placeholder="EMAIL">
+                                                </div>
+                                                <div class="col-md-6 request">
+                                                <textarea name="message" ng-model="option.message"
+                                                          class="input form-control"
+                                                          placeholder="YOUR REQUEST"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="row " ng-hide="option.collapsed">
+                                                <div class="col-lg-12 button">
+                                                    <input type="submit" value="SEND" class="btn"
+                                                           ng-click="placeReservation(option)">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-row">
+                                    <div class="col container">
+                                        <div class="row reservation-form-header">
+                                            <div class="col-md-12" ng-if="formOptions[1].collapsed">
+                                                <div class="week-number">Week 2</div>
+                                                <div class="reservation-dates">{{formOptions[1].reservationDate}}</div>
+                                                <div class="open-form">
+                                                    <a type="button" value="RESERVE" class="btn"
+                                                       ng-click="expandFormRow(formOptions[1])"
+                                                       data-toggle="collapse" data-parent="#accordion"
+                                                       href="#input-2">RESERVE</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9" ng-if="!formOptions[1].collapsed">
+                                                <div class="week-number">Week 1</div>
+                                                <div class="reservation-dates">{{formOptions[1].reservationDate}}</div>
+                                            </div>
+                                        </div>
+                                        <div id="input-2" class="panel-collapse collapse">
+                                            <div class="row inputs" ng-hide="formOptions[1].collapsed">
+                                                <div class="col-md-6 name-email">
+                                                    <input name="name" ng-model="option.name"
+                                                           class="input form-control name" placeholder="NAME">
+                                                    <input name="email" ng-model="option.email"
+                                                           class="input form-control" placeholder="EMAIL">
+                                                </div>
+                                                <div class="col-md-6 request">
+                                                <textarea name="message" ng-model="option.message"
+                                                          class="input form-control"
+                                                          placeholder="YOUR REQUEST"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="row " ng-hide="option.collapsed">
+                                                <div class="col-lg-12 button">
+                                                    <input type="submit" value="SEND" class="btn"
+                                                           ng-click="placeReservation(option)">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div ng-if="false" class="col container panel-group" id="accordion-2">
                             <form name="parentReservationForm">
                                 <div ng-repeat="option in formOptions track by $index" class="row form-row">
                                     <ng-form name="reservationForm">
-                                        <div class="col container">
+                                        <div class="col container panel-default">
                                             <div class="row reservation-form-header">
-                                                <div class="col-md-12" ng-if="option.collapsed" >
+                                                <div class="col-md-12">
                                                     <div class="week-number">Week {{$index + 1}}</div>
                                                     <div class="reservation-dates">{{option.reservationDate}}</div>
-                                                    <div ng-show="option.collapsed" class="open-form"><input
-                                                            type="button" value="RESERVE" class="btn" ng-click="expandFormRow(option)"></div>
-                                                </div>
-                                                <div class="col-md-9" ng-if="!option.collapsed" >
-                                                    <div class="week-number">Week {{$index + 1}}</div>
-                                                    <div class="reservation-dates">{{option.reservationDate}}</div>
+                                                    <div class="open-form">
+                                                        <a type="button" value="RESERVE" class="btn"
+                                                           data-toggle="collapse" data-parent="#accordion"
+                                                           href="#input-{{$index + 1}}">RESERVE</a>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="row inputs" ng-hide="option.collapsed">
+                                            <div id="input-{{$index + 1}}"
+                                                 class="row inputs collapse {{$index === 0 ? 'in' : '';}}">
                                                 <div class="col-md-6 name-email">
                                                     <input name="name" ng-model="option.name"
                                                            class="input form-control name" placeholder="NAME">
@@ -328,9 +415,10 @@
                                                               placeholder="YOUR REQUEST"></textarea>
                                                 </div>
                                             </div>
-                                            <div class="row " ng-hide="option.collapsed">
+                                            <div class="row " ng-hide="true">
                                                 <div class="col-lg-12 button">
-                                                    <input type="submit" value="SEND" class="btn" ng-click="placeReservation(option)">
+                                                    <input type="submit" value="SEND" class="btn"
+                                                           ng-click="placeReservation(option)">
                                                 </div>
                                             </div>
                                         </div>
@@ -339,10 +427,73 @@
                                 </div>
                             </form>
                         </div>
+
+                        <script type="text/ng-template" id="group-template.html">
+                            <div class="row reservation-form-header">
+                                <div class="col-md-12">
+                                    <div class="week-number">{{heading}}</div>
+                                    <div class="reservation-dates">{{$parent.option.reservationDate}}</div>
+                                    <div class="open-form">
+                                        <input type="button" href tabindex="0" class="btn accordion-toggle"
+                                               ng-hide="$parent.option.hidden"
+                                               ng-click="toggleOpen(); $parent.expandFormRow($parent.option)" uib-accordion-transclude="heading"
+                                               uib-accordion-header value="RESERVE">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="collapse" uib-collapse="!isOpen">
+                                <div class="" style="" ng-transclude>
+
+                                </div>
+                            </div>
+                        </script>
+
+
+                        <div class="col container">
+                            <form name="parentReservationForm">
+                                <div class="row form-row">
+                                    <ng-form name="reservationForm">
+                                        <div class="col container">
+                                            <uib-accordion close-others="oneAtATime">
+                                                <div ng-repeat="option in formOptions track by $index"
+                                                     uib-accordion-group class="accordion-element" heading="Week {{$index + 1}}"
+                                                     template-url="group-template.html">
+
+                                                    <div class="row inputs">
+                                                        <div class="col-md-6 name-email">
+                                                            <input name="name" ng-model="option.name"
+                                                                   class="input form-control name" placeholder="NAME">
+                                                            <input name="email" ng-model="option.email"
+                                                                   class="input form-control" placeholder="EMAIL">
+                                                        </div>
+                                                        <div class="col-md-6 request">
+                                                    <textarea name="message" ng-model="option.message"
+                                                              class="input form-control"
+                                                              placeholder="YOUR REQUEST"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row ">
+                                                        <div class="col-lg-12 button">
+                                                            <input type="submit" value="SEND" class="btn"
+                                                                   ng-click="placeReservation(option)">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </uib-accordion>
+                                        </div>
+                                    </ng-form>
+                                </div>
+                            </form>
+                        </div>
+
+
                     </div>
                     <div id="reservation-footer" class="row">
                         <div>HAVE QUESTIONS ABOUT RESERVING ONLINE?</div>
-                        <div><a>CONTACT US</a> OR CALL US AT  <a>877-358-3695</a></div>
+                        <div><a>CONTACT US</a> OR CALL US AT <a>877-358-3695</a></div>
                     </div>
                 </div>
 
@@ -529,7 +680,6 @@
                 </div>
             </div> <!--Site footer-->
 
-
             <div id="debug" class="row">
                 <div class="col-md-6">
                     <h5>Make a Reservation</h5>
@@ -612,6 +762,9 @@
 <script src="assets/libs/angular/angular.min.js"></script>
 <script src="assets/libs/ng-prettyjson/dist/ng-prettyjson.min.js"></script>
 <script src="assets/libs/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+<script src="assets/libs/angular-animate/angular-animate.min.js"></script>
+<script src="assets/libs/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+<script src="assets/libs/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
 
 <!-- Custom libraries -->
 <script src="app.js"></script>
