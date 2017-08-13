@@ -199,12 +199,17 @@ html {
   padding-right: 3%;
 }
 #app #content #panel-10 .bullets ul {
+  list-style-image: url('/assets/icons/fullet-hollow.png');
   font-size: 24px;
 }
 #app #content #panel-10 .bullets li {
   font-family: OpenSans-Semibold;
   margin-bottom: 4%;
   font-weight: bold;
+}
+#app #content #panel-10 .bullets li span {
+  position: relative;
+  bottom: 3px;
 }
 #app #content #panel-10 #house-images {
   margin-bottom: 4%;
