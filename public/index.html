@@ -31,33 +31,38 @@
             <!-- TODO: Title-->
             <!-- TODO: Brochure input-->
             <div id="panel-1" class="row">
-                <!--<div id="logo-column" class="col-md-6">-->
-                <!--<h1>I AM LOGO, HEAR ME</h1>-->
-                <!--</div>-->
-                <!--<div id="blurb-column" class="col-md-6">-->
-                <!--<h1>ELITE SPANISH IMMERSION</h1>-->
-                <!--<p>Transform your Spanish in six days of intensive training at a magnificent mansion in Mexico-->
-                <!--City.</p>-->
-                <!--<input type="button" class="btn btn-default" value="SEND ME A BROCHURE">-->
-                <!--</div>-->
+                <div id="logo-column" class="col-md-6">
+                    <img id="header-logo" src="assets/img/header/header-logo.png">
+                </div>
+                <div id="blurb-column" class="col-md-6">
+                    <div id="immersion-title">ELITE SPANISH IMMERSION</div>
+                    <p>Transform your Spanish in six days of intensive training at a magnificent mansion in Mexico
+                        City.</p>
+                    <div id="brochure-button">
+                        <input type="button" value="SEND ME A BROCHURE" class="btn btn-default">
+                    </div>
+                </div>
             </div> <!--Logo, brochure, chapel-->
 
-            <!--TODO: Links -->
             <!--TODO: Icons -->
             <div id="panel-2" class="row">
                 <div id="links" class="col container">
                     <div id="links-row" class="row">
                         <div id="intensive-spanish" class="link col-md-3" ng-click="goTo('panel-4')">
-                            <span class="glyphicon glyphicon-arrow-down"></span> <span>INTENSIVE SPANISH</span>
+                            <div class="link-icon"></div>
+                            <span>INTENSIVE SPANISH</span>
                         </div>
                         <div id="premium-lodge" class="link col-md-3" ng-click="goTo('panel-10')">
-                            <span class="glyphicon glyphicon-arrow-down"></span> <span>PREMIUM LODGE</span>
+                            <div class="link-icon"></div>
+                            <span>PREMIUM LODGE</span>
                         </div>
                         <div id="results" class="link col-md-3" ng-click="goTo('panel-14')">
-                            <span class="glyphicon glyphicon-arrow-down"></span> <span> RESULTS SINCE 2007</span>
+                            <div class="link-icon"></div>
+                            <span> RESULTS SINCE 2007</span>
                         </div>
                         <div id="the-program" class="link col-md-3" ng-click="goTo('panel-9')">
-                            <span class="glyphicon glyphicon-arrow-down"></span> <span>THE PROGRAM</span>
+                            <div class="link-icon"></div>
+                            <span>THE PROGRAM</span>
                         </div>
                     </div>
                 </div>
@@ -518,18 +523,21 @@
                         <div class="col">
                             <ul>
                                 <li>
-                                    Most language teachers end up in this business by default yet for a few, language
+                                    <span>Most language teachers end up in this business by default yet for a few, language
                                     coaching is a true vocation. We've recruited all over the Spanish-speaking world to
-                                    find thm.
+                                    find them.</span>
                                 </li>
-                                <li>Many speak three or more languages, have advanced degrees and come from as far way
-                                    as barcelona to be in Mexico City to make a difference to your learning.
+                                <li>
+                                    <span>Many speak three or more languages, have advanced degrees and come from as far way
+                                    as barcelona to be in Mexico City to make a difference to your learning.</span>
                                 </li>
-                                <li>They're focused and ready to deliver a unique experience in the luxurious halls of
-                                    our Polanco mansion.
+                                <li>
+                                    <span>They're focused and ready to deliver a unique experience in the luxurious halls of
+                                    our Polanco mansion.</span>
                                 </li>
-                                <li>We're committed to making sure that nothing reminds you of a dull language school
-                                    setting, and that you won't ever have to sing a song.
+                                <li>
+                                    <span>We're committed to making sure that nothing reminds you of a dull language school
+                                    setting, and that you won't ever have to sing a song.</span>
                                 </li>
                             </ul>
                         </div>
@@ -664,6 +672,7 @@
             </div> <!--2018 reservation-->
 
             <!--TODO: Contact Us email -->
+            <!--TODO: Proper positioning -->
             <div id="footer" class="row">
                 <div id="footer-col" class="col-md-6">
                     <div id="footer-logo"></div>

@@ -10,6 +10,10 @@
   font-family: 'OpenSans-Light';
   src: url('/assets/fonts/OpenSans-Light.ttf');
 }
+@font-face {
+  font-family: 'Roboto-Light';
+  src: url('/assets/fonts/Roboto-Light_1.ttf');
+}
 body,
 html {
   height: 100%;
@@ -41,10 +45,39 @@ html {
   margin-bottom: 30px;
 }
 #app #content #panel-1 {
-  background: transparent url('assets/img/home/home.jpg') no-repeat center center;
+  background: transparent url(' assets/img/home/home.jpg') no-repeat center center;
   width: auto;
-  height: 850px;
+  height: 737px;
   background-size: cover;
+}
+#app #content #panel-1 #logo-column #header-logo {
+  margin-top: 15px;
+  margin-left: 25px;
+  height: 140px;
+}
+#app #content #panel-1 #blurb-column {
+  padding-right: 13%;
+  padding-left: 7%;
+  font-family: Roboto-Light;
+  color: white;
+}
+#app #content #panel-1 #blurb-column #immersion-title {
+  margin-top: 85px;
+  font-size: 72px;
+  line-height: 82px;
+}
+#app #content #panel-1 #blurb-column p {
+  font-size: 28px;
+}
+#app #content #panel-1 #blurb-column #brochure-button input {
+  height: 60px;
+  width: 250px;
+  border: white solid 2px;
+  color: white;
+  background: transparent;
+  font-size: 20px;
+  font-family: OpenSans-Semibold;
+  border-radius: 0;
 }
 #app #content #panel-2 {
   height: 100px;
@@ -56,6 +89,13 @@ html {
   padding-top: 2.5%;
   text-align: center;
   cursor: pointer;
+}
+#app #content #panel-2 .link .link-icon {
+  display: inline-block;
+  background-size: cover;
+  background: transparent url('assets/icons/dropdown.png') no-repeat center center;
+  width: 23px;
+  height: 12px;
 }
 #app #content #panel-2 .link span {
   font-size: 20px;
@@ -199,7 +239,7 @@ html {
   padding-right: 3%;
 }
 #app #content #panel-10 .bullets ul {
-  list-style-image: url('/assets/icons/fullet-hollow.png');
+  list-style-image: url('/assets/icons/bullet-hollow.png');
   font-size: 24px;
 }
 #app #content #panel-10 .bullets li {
@@ -388,11 +428,16 @@ html {
 }
 #app #content #panel-11 .bullets ul {
   font-size: 24px;
+  list-style-image: url('/assets/icons/bullet-filled.png');
 }
 #app #content #panel-11 .bullets li {
   font-family: OpenSans-Regular;
   margin-bottom: 4%;
   font-weight: bold;
+}
+#app #content #panel-11 .bullets li span {
+  position: relative;
+  bottom: 3px;
 }
 #app #content #panel-12 {
   background-size: cover;
@@ -432,6 +477,9 @@ html {
 }
 #app #content #panel-13 #city-mosaic #city-mosaic-img-4 {
   background: transparent url('assets/img/mosaic-5/m5-4.jpg') no-repeat center center;
+}
+#app #content #panel-14 {
+  margin-bottom: 30px;
 }
 #app #content #panel-14 .container {
   padding-left: 12%;

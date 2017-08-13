@@ -13,6 +13,11 @@
   src: url('/assets/fonts/OpenSans-Light.ttf');
 }
 
+@font-face {
+  font-family: 'Roboto-Light';
+  src: url('/assets/fonts/Roboto-Light_1.ttf');
+}
+
 body, html {
   height: 100%;
 }
@@ -27,7 +32,6 @@ body, html {
 #app {
   #content {
 
-    //=======================TODO: REMOVE THIS
     margin-bottom: 15px;
 
     .fluenz-title {
@@ -53,10 +57,51 @@ body, html {
 
     #panel-1 {
       //border: green solid thick;
-      background: transparent url('assets/img/home/home.jpg') no-repeat center center;
+      background: transparent url(' assets/img/home/home.jpg') no-repeat center center;
       width: auto;
-      height: 850px;
+      height: 737px;
       background-size: cover;
+
+      #logo-column{
+
+        #header-logo {
+          margin-top: 15px;
+          margin-left: 25px;
+          height: 140px;
+        }
+      }
+
+      #blurb-column {
+        padding-right: 13%;
+        padding-left: 7%;
+        font-family: Roboto-Light;
+        color: white;
+
+        #immersion-title{
+          margin-top: 85px;
+          font-size: 72px;
+          line-height: 82px;
+        }
+
+        p {
+          font-size: 28px;
+        }
+
+        #brochure-button {
+          input {
+            height: 60px;
+            width: 250px;
+            border: white solid 2px;
+            color: white;
+            background: transparent;
+
+            font-size: 20px;
+            font-family: OpenSans-Semibold;
+
+            border-radius: 0;
+          }
+        }
+      }
     }
 
     #panel-2 {
@@ -69,6 +114,14 @@ body, html {
         padding-top: 2.5%;
         text-align: center;
         cursor: pointer;
+        .link-icon {
+          display: inline-block;
+          background-size: cover;
+          background: transparent url('assets/icons/dropdown.png') no-repeat center center;
+          width: 23px;
+          height: 12px;
+        }
+
         span {
           font-size: 20px;
         }
@@ -221,7 +274,7 @@ body, html {
 
       .bullets {
         ul {
-          list-style-image: url('/assets/icons/fullet-hollow.png');
+          list-style-image: url('/assets/icons/bullet-hollow.png');
           font-size: 24px;
         }
 
@@ -464,12 +517,18 @@ body, html {
         padding-top: 100px;
         ul {
           font-size: 24px;
+          list-style-image: url('/assets/icons/bullet-filled.png');
         }
 
         li {
           font-family: OpenSans-Regular;
           margin-bottom: 4%;
           font-weight: bold;
+
+          span {
+            position: relative;
+            bottom: 3px;
+          }
         }
       }
     }
@@ -530,6 +589,8 @@ body, html {
     }
 
     #panel-14 {
+      margin-bottom: 30px;
+
       .container {
         padding-left: 12%;
       }
