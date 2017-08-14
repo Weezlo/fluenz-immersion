@@ -125,6 +125,8 @@ myApp.controller('TestController', ['$scope', '$http', '$location', '$anchorScro
 
     $scope.requestBrochure = function () {
         console.log('Calling node with a brochure request');
+
+        $scope.brochureOpened = false;
         $http({
             method: 'POST',
             url: '/spreadsheets/brochure',
