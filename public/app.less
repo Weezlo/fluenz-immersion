@@ -62,7 +62,7 @@ body, html {
       height: 737px;
       background-size: cover;
 
-      #logo-column{
+      #logo-column {
 
         #header-logo {
           margin-top: 15px;
@@ -77,7 +77,7 @@ body, html {
         font-family: Roboto-Light;
         color: white;
 
-        #immersion-title{
+        #immersion-title {
           margin-top: 85px;
           font-size: 72px;
           line-height: 82px;
@@ -88,12 +88,87 @@ body, html {
         }
 
         #brochure-button {
+
+          #first-button {
+            transition: all 0.5s ease-in-out;
+          }
+
           input {
             height: 60px;
             width: 250px;
             border: white solid 2px;
             color: white;
             background: transparent;
+
+            font-size: 18px;
+            font-family: OpenSans-Semibold;
+
+            border-radius: 0;
+          }
+
+          input:hover, input:focus {
+            border: white solid 2px;
+            color: black;
+            background: white;
+            transition: all 0.5s ease-in-out;
+          }
+
+          .brochure-input {
+            display: inline-block;
+
+            ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+              color: white;
+            }
+            :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+              color: white;
+              opacity: 1;
+            }
+            ::-moz-placeholder { /* Mozilla Firefox 19+ */
+              color: white;
+              opacity: 1;
+            }
+            :-ms-input-placeholder { /* Internet Explorer 10-11 */
+              color: white;
+            }
+            :-ms-input-placeholder { /* Microsoft Edge */
+              color: white;
+            }
+
+            #send {
+              width: 150px;
+            }
+          }
+
+          .brochure-input:focus {
+            display: inline-block;
+
+            ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+              color: black;
+            }
+            :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+              color: black;
+              opacity: 1;
+            }
+            ::-moz-placeholder { /* Mozilla Firefox 19+ */
+              color: black;
+              opacity: 1;
+            }
+            :-ms-input-placeholder { /* Internet Explorer 10-11 */
+              color: black;
+            }
+            :-ms-input-placeholder { /* Microsoft Edge */
+              color: black;
+            }
+          }
+
+          #brochure-sent {
+            height: 60px;
+            width: 403px;
+            border: white solid 2px;
+            color: white;
+            background: transparent;
+            text-align: center;
+            padding-top:15px;
 
             font-size: 20px;
             font-family: OpenSans-Semibold;

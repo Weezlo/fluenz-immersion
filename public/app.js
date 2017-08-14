@@ -20,12 +20,15 @@ myApp.config(function ($stateProvider) {
 });
 
 //region Controllers
-myApp.controller('TestController', ['$scope', '$http', '$location', '$anchorScroll', function ($scope, $http, $location, $anchorScroll) {
+myApp.controller('TestController', ['$scope', '$http', '$location', '$anchorScroll', '$window', function ($scope, $http, $location, $anchorScroll, $window) {
 
     //region forms
+    $scope.brochureOpened = false;
+    $scope.brochureSent = false;
+
     $scope.selections = [
-        {name:'single', label:'SINGLE'},
-        {name:'double', label:'DOUBLE'}
+        {name: 'single', label: 'SINGLE'},
+        {name: 'double', label: 'DOUBLE'}
     ];
 
     $scope.occupancy = $scope.selections[0];
@@ -33,8 +36,8 @@ myApp.controller('TestController', ['$scope', '$http', '$location', '$anchorScro
 
     $scope.formOptions = [
         {
-            heading:{
-                week:'WEEK 1',
+            heading: {
+                week: 'WEEK 1',
                 date: 'JAN 8-13'
             },
             hidden: false,
@@ -43,21 +46,21 @@ myApp.controller('TestController', ['$scope', '$http', '$location', '$anchorScro
             name: '',
             email: '',
             message: ''
-        },{
+        }, {
             hidden: false,
             reservationDate: 'JAN 15-20',
             location: $scope.location,
             name: '',
             email: '',
             message: ''
-        },{
+        }, {
             hidden: false,
             reservationDate: 'JAN 22-27',
             location: $scope.location,
             name: '',
             email: '',
             message: ''
-        },{
+        }, {
             hidden: false,
             reservationDate: 'JAN/FEB 29-3',
             location: $scope.location,
@@ -67,10 +70,10 @@ myApp.controller('TestController', ['$scope', '$http', '$location', '$anchorScro
         }
     ];
 
-    $scope.expandFormRow = function(formOption){
+    $scope.expandFormRow = function (formOption) {
         var index = $scope.formOptions.indexOf(formOption);
-        for(var i = 0; i < $scope.formOptions.length; ++i){
-            if(i !== index){
+        for (var i = 0; i < $scope.formOptions.length; ++i) {
+            if (i !== index) {
                 $scope.formOptions[i] = {
                     hidden: false,
                     reservationDate: formOption.reservationDate,
@@ -85,11 +88,16 @@ myApp.controller('TestController', ['$scope', '$http', '$location', '$anchorScro
         }
     };
 
-    $scope.goTo = function(location){
+    $scope.goTo = function (location) {
         $location.hash(location);
         $anchorScroll();
     };
+
+    $scope.openBrochure = function () {
+        $scope.brochureOpened = !$scope.brochureOpened;
+    };
     //endregion
+
 
     //region HTTP calls
     $scope.placeReservation = function (formOption) {
@@ -115,7 +123,7 @@ myApp.controller('TestController', ['$scope', '$http', '$location', '$anchorScro
         });
     };
 
-    $scope.requestBrochure = function(){
+    $scope.requestBrochure = function () {
         console.log('Calling node with a brochure request');
         $http({
             method: 'POST',
@@ -126,6 +134,7 @@ myApp.controller('TestController', ['$scope', '$http', '$location', '$anchorScro
                 status: 'Pending'
             }
         }).then(function successCallback(result) {
+            $scope.brochureSent = true;
             console.log('Success requesting a brochure:', result.data);
         }, function errorCallback(error) {
             console.error('Error when requesting a brochure: ', error);
@@ -134,32 +143,6 @@ myApp.controller('TestController', ['$scope', '$http', '$location', '$anchorScro
     //endregion
 
 //region DEBUG
-    $scope.oneAtATime = true;
-
-    $scope.groups = [
-        {
-            title: 'Dynamic Group Header - 1',
-            content: 'Dynamic Group Body - 1'
-        },
-        {
-            title: 'Dynamic Group Header - 2',
-            content: 'Dynamic Group Body - 2'
-        }
-    ];
-
-    $scope.items = ['Item 1', 'Item 2', 'Item 3'];
-
-    $scope.addItem = function() {
-        var newItemNo = $scope.items.length + 1;
-        $scope.items.push('Item ' + newItemNo);
-    };
-
-    $scope.status = {
-        isCustomHeaderOpen: false,
-        isFirstOpen: true,
-        isFirstDisabled: false
-    };
-
 //     $scope.getSpreadsheet = function() {
 //         $http({
 //             method: 'GET',

@@ -69,12 +69,87 @@ html {
 #app #content #panel-1 #blurb-column p {
   font-size: 28px;
 }
+#app #content #panel-1 #blurb-column #brochure-button #first-button {
+  transition: all 0.5s ease-in-out;
+}
 #app #content #panel-1 #blurb-column #brochure-button input {
   height: 60px;
   width: 250px;
   border: white solid 2px;
   color: white;
   background: transparent;
+  font-size: 18px;
+  font-family: OpenSans-Semibold;
+  border-radius: 0;
+}
+#app #content #panel-1 #blurb-column #brochure-button input:hover,
+#app #content #panel-1 #blurb-column #brochure-button input:focus {
+  border: white solid 2px;
+  color: black;
+  background: white;
+  transition: all 0.5s ease-in-out;
+}
+#app #content #panel-1 #blurb-column #brochure-button .brochure-input {
+  display: inline-block;
+}
+#app #content #panel-1 #blurb-column #brochure-button .brochure-input ::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: white;
+}
+#app #content #panel-1 #blurb-column #brochure-button .brochure-input :-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: white;
+  opacity: 1;
+}
+#app #content #panel-1 #blurb-column #brochure-button .brochure-input ::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: white;
+  opacity: 1;
+}
+#app #content #panel-1 #blurb-column #brochure-button .brochure-input :-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white;
+}
+#app #content #panel-1 #blurb-column #brochure-button .brochure-input :-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: white;
+}
+#app #content #panel-1 #blurb-column #brochure-button .brochure-input #send {
+  width: 150px;
+}
+#app #content #panel-1 #blurb-column #brochure-button .brochure-input:focus {
+  display: inline-block;
+}
+#app #content #panel-1 #blurb-column #brochure-button .brochure-input:focus ::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: black;
+}
+#app #content #panel-1 #blurb-column #brochure-button .brochure-input:focus :-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: black;
+  opacity: 1;
+}
+#app #content #panel-1 #blurb-column #brochure-button .brochure-input:focus ::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: black;
+  opacity: 1;
+}
+#app #content #panel-1 #blurb-column #brochure-button .brochure-input:focus :-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: black;
+}
+#app #content #panel-1 #blurb-column #brochure-button .brochure-input:focus :-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: black;
+}
+#app #content #panel-1 #blurb-column #brochure-button #brochure-sent {
+  height: 60px;
+  width: 403px;
+  border: white solid 2px;
+  color: white;
+  background: transparent;
+  text-align: center;
+  padding-top: 15px;
   font-size: 20px;
   font-family: OpenSans-Semibold;
   border-radius: 0;

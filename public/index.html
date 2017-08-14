@@ -39,7 +39,13 @@
                     <p>Transform your Spanish in six days of intensive training at a magnificent mansion in Mexico
                         City.</p>
                     <div id="brochure-button">
-                        <input type="button" value="SEND ME A BROCHURE" class="btn btn-default">
+                        <input id="first-button" type="button" value="SEND ME A BROCHURE" class="btn"
+                               ng-hide="brochureOpened || brochureSent" ng-click="openBrochure()">
+                        <div ng-show="brochureOpened && !brochureSent" class="brochure-input">
+                            <input id="email" placeholder="E-MAIL ADDRESS" class="btn" ng-model="brochureEmail">
+                            <input id="send" type="button" value="SEND" class="btn btn-default" ng-click="requestBrochure()">
+                        </div>
+                        <div id="brochure-sent" value="BROCHURE SENT!" ng-show="brochureSent">BROCHURE SENT!</div>
                     </div>
                 </div>
             </div> <!--Logo, brochure, chapel-->
