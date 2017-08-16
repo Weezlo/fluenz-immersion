@@ -40,12 +40,41 @@
 body, html {
   height: 100%;
 }
+ 
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::
+font size breakpoints
+*/
+/* Small devices (landscape phones, 544px and up) */
+@media (max-width: 543px) {  
+  body {font-size:2rem;} /*1rem = 16px*/
+}
+
+/* Small devices (landscape phones, 544px and up) */
+@media (min-width: 544px) {  
+  body {font-size:2rem;} /*1rem = 16px*/
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {  
+  body {font-size:2.5rem;} /*1rem = 16px*/
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+  body {font-size:2.5rem;} /*1rem = 16px*/
+}
+ 
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  
+  body {font-size:3rem;} /*1rem = 16px*/    
+}
 
 .container {
   margin-left: 0;
   margin-right: 0;
   width: 100%;
-
+  overflow: hidden;
 }
 
 #app {
@@ -56,21 +85,21 @@ body, html {
     .fluenz-title {
       font-family: OpenSans-Light;
       color: gray;
-      font-size: 61px;
-      margin-top: 50px;
+      font-size: 2em;
+      margin-top: 40px;
       margin-bottom: 50px;
     }
 
     .fluenz-blurb-title {
       font-family: OpenSans-Regular;
       color: red;
-      font-size: 28px;
+      font-size: 1em;
       margin-bottom: 20px;
     }
 
     .fluenz-sub-title {
       color: #33b9af;
-      font-size: 20px;
+      font-size: .7em;
       margin-bottom: 30px;
     }
 
@@ -81,12 +110,14 @@ body, html {
       height: 737px;
       background-size: cover;
 
-      #logo-column {
+      #logo-column{
 
         #header-logo {
-          margin-top: 15px;
-          margin-left: 25px;
-          height: 140px;
+          // margin-top: 15px;
+          // margin-left: 25px;
+          // height: 140px;
+          width: 100%;
+          max-width: 418px;
         }
       }
 
@@ -96,22 +127,17 @@ body, html {
         font-family: Roboto-Light;
         color: white;
 
-        #immersion-title {
+        #immersion-title{
           margin-top: 85px;
-          font-size: 72px;
-          line-height: 82px;
+          font-size: 2.4em;
+          line-height: 1.2em;
         }
 
         p {
-          font-size: 28px;
+          font-size: .94em;
         }
 
         #brochure-button {
-
-          #first-button {
-            transition: all 0.5s ease-in-out;
-          }
-
           input {
             height: 60px;
             width: 250px;
@@ -119,7 +145,7 @@ body, html {
             color: white;
             background: transparent;
 
-            font-size: 18px;
+            font-size: .67em;
             font-family: OpenSans-Semibold;
 
             border-radius: 0;
@@ -199,9 +225,10 @@ body, html {
     }
 
     #panel-2 {
-      height: 100px;
+      // height: 100px;
       margin-left: 10%;
       margin-right: 10%;
+      padding-bottom: 1em;
 
       .link {
         font-family: OpenSans-Semibold;
@@ -217,7 +244,7 @@ body, html {
         }
 
         span {
-          font-size: 20px;
+          font-size: .67em;
         }
       }
     }
@@ -313,7 +340,7 @@ body, html {
         padding-right: 14px;
         p {
           font-family: OpenSans-Regular;
-          font-size: 21px;
+          font-size: .7em;
         }
       }
     }
@@ -329,7 +356,7 @@ body, html {
 
       p {
         font-family: OpenSans-Regular;
-        font-size: 21px;
+        font-size: .7em;
         margin-bottom: 20px;
       }
     }
@@ -369,7 +396,7 @@ body, html {
       .bullets {
         ul {
           list-style-image: url('/assets/icons/bullet-hollow.png');
-          font-size: 24px;
+          font-size: .8em;
         }
 
         li {
@@ -420,7 +447,7 @@ body, html {
 
         p {
           font-family: OpenSans-Regular;
-          font-size: 21px;
+          font-size: .7em;
         }
       }
 
@@ -436,9 +463,9 @@ body, html {
         background-size: cover;
         background-color: #2fb8ae;
         color: white;
-        font-size: 55px;
+        font-size: 1.8em;
         text-align: center;
-        height: 120px;
+        // height: 120px;
 
         #header {
           margin-top: 1.5%;
@@ -458,7 +485,7 @@ body, html {
           }
 
           .reservation-form-header {
-            font-size: 55px;
+            font-size: 1.7em;
             font-family: OpenSans-Light;
             margin-bottom: 30px;
             margin-top: 40px;
@@ -490,7 +517,7 @@ body, html {
                 border: #39bbb2 solid 2px;
                 background: white;
 
-                font-size: 20px;
+                font-size: 1em;
                 font-family: OpenSans-Semibold;
 
                 border-radius: 0;
@@ -503,7 +530,7 @@ body, html {
                 border: #39bbb2 solid 2px;
                 background: white;
 
-                font-size: 20px;
+                font-size: .4em;
                 font-family: OpenSans-Semibold;
 
                 border-radius: 0;
@@ -516,7 +543,7 @@ body, html {
           .input {
             display: block;
             width: 100%;
-            font-size: 20px;
+            font-size: .7em;
             background: #dadada;
             border-radius: 0;
             margin-bottom: 20px;
@@ -550,7 +577,7 @@ body, html {
             border: #39bbb2 solid 2px;
             background: white;
 
-            font-size: 20px;
+            font-size: .67em;
             font-family: OpenSans-Semibold;
 
             border-radius: 0;
@@ -563,7 +590,7 @@ body, html {
         margin-bottom: 40px;
         text-align: center;
         font-family: OpenSans-Semibold;
-        font-size: 22px;
+        font-size: .75em;
 
         a {
           color: #2fb8ae
@@ -610,7 +637,7 @@ body, html {
       .bullets {
         padding-top: 100px;
         ul {
-          font-size: 24px;
+          font-size: .8em;
           list-style-image: url('/assets/icons/bullet-filled.png');
         }
 
@@ -646,7 +673,7 @@ body, html {
         font-family: OpenSans-Regular;
         color: white;
         padding: 10px 12% 20px;
-        font-size: 21px;
+        font-size: .7em;
       }
     }
 
@@ -704,7 +731,7 @@ body, html {
       background-size: cover;
       background-color: #2fb8ae;
       color: white;
-      font-size: 55px;
+      font-size: 1.8em;
       text-align: center;
       height: 215px;
 
@@ -721,7 +748,7 @@ body, html {
           color: white;
           background: #39bbb2;
 
-          font-size: 20px;
+          font-size: .37em;
           font-family: OpenSans-Semibold;
 
           border-radius: 0;
@@ -731,7 +758,7 @@ body, html {
 
     #footer {
       text-align: center;
-      font-size: 22px;
+      font-size: .7em;
       padding-top: 40px;
       padding-bottom: 40px;
       font-family: OpenSans-Regular;
@@ -746,7 +773,7 @@ body, html {
       }
 
       #footer-logo {
-        margin-left: 78%;
+        // margin-left: 78%;
         background: transparent url('assets/tmp/img/footer-logo.PNG') no-repeat center center;
         width: 186px;
         height: 77px;
@@ -755,7 +782,7 @@ body, html {
 
       #contact-us {
         padding-top: 45px;
-        padding-right: 33%;
+        // padding-right: 33%;
         padding-left: 0;
       }
     }
